@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Integrations - EmailForce</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container-fluid">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon">E</div>
+                    EmailForce
+                </div>
+                <nav class="nav">
+                    <a href="dashboard.html" class="nav-link">Dashboard</a>
+                    <a href="campaigns.html" class="nav-link">Campaigns</a>
+                    <a href="automations.html" class="nav-link">Automations</a>
+                    <a href="analytics.html" class="nav-link">Analytics</a>
+                </nav>
+                <div class="user-menu">
+                    <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+                    <div class="user-avatar">M</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <nav class="sidebar-nav">
+            <div class="sidebar-section">
+                <div class="sidebar-title">Overview</div>
+                <a href="dashboard.html" class="sidebar-link">
+                    <span class="sidebar-icon">📊</span>
+                    Dashboard
+                </a>
+                <a href="analytics.html" class="sidebar-link">
+                    <span class="sidebar-icon">📈</span>
+                    Analytics
+                </a>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="sidebar-title">Campaigns</div>
+                <a href="campaigns.html" class="sidebar-link">
+                    <span class="sidebar-icon">📧</span>
+                    Campaign Builder
+                </a>
+                <a href="campaigns.html#templates" class="sidebar-link">
+                    <span class="sidebar-icon">📋</span>
+                    Templates
+                </a>
+                <a href="campaigns.html#drafts" class="sidebar-link">
+                    <span class="sidebar-icon">📝</span>
+                    Drafts
+                </a>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="sidebar-title">Automations</div>
+                <a href="automations.html" class="sidebar-link">
+                    <span class="sidebar-icon">🤖</span>
+                    AI Agents
+                </a>
+                <a href="automations.html#recovery" class="sidebar-link">
+                    <span class="sidebar-icon">💰</span>
+                    Revenue Recovery
+                </a>
+                <a href="automations.html#workflows" class="sidebar-link">
+                    <span class="sidebar-icon">⚡</span>
+                    Workflows
+                </a>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="sidebar-title">Compliance</div>
+                <a href="compliance-guard.html" class="sidebar-link">
+                    <span class="sidebar-icon">🛡️</span>
+                    Compliance Guard
+                </a>
+                <a href="compliance-guard.html#consent" class="sidebar-link">
+                    <span class="sidebar-icon">✅</span>
+                    Consent Management
+                </a>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="sidebar-title">Settings</div>
+                <a href="integrations.html" class="sidebar-link active">
+                    <span class="sidebar-icon">🔗</span>
+                    Integrations
+                </a>
+                <a href="#" class="sidebar-link">
+                    <span class="sidebar-icon">👥</span>
+                    Team
+                </a>
+                <a href="#" class="sidebar-link">
+                    <span class="sidebar-icon">⚙️</span>
+                    Settings
+                </a>
+            </div>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Page Header -->
+        <div class="page-header">
+            <h1 class="page-title">Integrations</h1>
+            <p class="page-subtitle">Connect your data sources to enable AI-powered personalization and automation.</p>
+        </div>
+
+        <!-- Integration Status -->
+        <div class="ai-agent">
+            <div class="ai-status">
+                <div class="ai-status-indicator"></div>
+                <span>3 integrations are actively connected</span>
+            </div>
+            <h3>Your data is flowing seamlessly</h3>
+            <p>Shopify, Segment CDP, and Google Analytics are connected and providing real-time data to power your AI agents and personalized campaigns.</p>
+        </div>
+
+        <!-- E-commerce Platforms -->
+        <div class="card mb-8">
+            <div class="card-header">
+                <h3 class="card-title">E-commerce Platforms</h3>
+            </div>
+            <div class="card-body">
+                <div class="grid grid-3" style="gap: var(--spacing-6);">
+                    <!-- Shopify -->
+                    <div class="integration-card connected">
+                        <div class="integration-icon">🛍️</div>
+                        <h4>Shopify</h4>
+                        <p style="margin-bottom: var(--spacing-4);">Connect your Shopify store for product data, orders, and customer information.</p>
+                        <div style="margin-bottom: var(--spacing-4);">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: var(--spacing-2);">
+                                <span>Status</span>
+                                <span class="badge badge-success">Connected</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: var(--spacing-2);">
+                                <span>Store</span>
+                                <span>mariasshoes.myshopify.com</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between;">
+                                <span>Last Sync</span>
+                                <span>2 min ago</span>
+                            </div>
+                        </div>
+                        <button class="btn btn-secondary w-full" onclick="showShopifySettings()">Manage</button>
+                    </div>
+
+                    <!-- BigCommerce -->
+                    <div class="integration-card">
+                        <div class="integration-icon">🛒</div>
+                        <h4>BigCommerce</h4>
+                        <p style="margin-bottom: var(--spacing-4);">Connect your BigCommerce store for seamless data integration.</p>
+                        <div style="margin-bottom: var(--spacing-4);">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: var(--spacing-2);">
+                                <span>Status</span>
+                                <span class="badge badge-warning">Not Connected</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: var(--spacing-2);">
+                                <span>Features</span>
+                                <span>Product sync, Orders</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between;">
+                                <span>Setup Time</span>
+                                <span>5 minutes</span>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary w-full" onclick="connectBigCommerce()">Connect</button>
+                    </div>
+
+                    <!-- WooCommerce -->
+                    <div class="integration-card">
+                        <div class="integration-icon">📦</div>
+                        <h4>WooCommerce</h4>
+                        <p style="margin-bottom: var(--spacing-4);">Connect your WordPress WooCommerce store for complete e-commerce data.</p>
+                        <div style="margin-bottom: var(--spacing-4);">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: var(--spacing-2);">
+                                <span>Status</span>
+                                <span class="badge badge-warning">Not Connected</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: var(--spacing-2);">
+                                <span>Features</span>
+                                <span>Product sync, Orders</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between;">
+                                <span>Setup Time</span>
+                                <span>10 minutes</span>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary w-full" onclick="connectWooCommerce()">Connect</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Customer Data Platforms -->
+        <div class="card mb-8">
+            <div class="card-header">
+                <h3 class="card-title">Customer Data Platforms (CDP)</h3>
+            </div>
+            <div class="card-body">
+                <div class="grid grid-3" style="gap: var(--spacing-6);">
+                    <!-- Segment -->
+                    <div class="integration-card connected">
+                        <div class="integration-icon">📊</div>
+                        <h4>Segment</h4>
+                        <p style="margin-bottom: var(--spacing-4);">Connect Segment CDP for unified customer data and advanced segmentation.</p>
+                        <div style="margin-bottom: var(--spacing-4);">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: var(--spacing-2);">
+                                <span>Status</span>
+                                <span class="badge badge-success">Connected</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: var(--spacing-2);">
+                                <span>Workspace</span>
+                                <span>Maria's Shoes</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between;">
+                                <span>Last Sync</span>
+                                <span>5 min ago</span>
+                            </div>
+                        </div>
+                        <button class="btn btn-secondary w-full" onclick="showSegmentSettings()">Manage</button>
+                    </div>
+
+                    <!-- mParticle -->
+                    <div class="integration-card">
+                        <div class="integration-icon">🔗</div>
+                        <h4>mParticle</h4>
+                        <p style="margin-bottom: var(--spacing-4);">Connect mParticle for comprehensive customer data orchestration.</p>
+                        <div style="margin-bottom: var(--spacing-4);">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: var(--spacing-2);">
+                                <span>Status</span>
+                                <span class="badge badge-warning">Not Connected</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: var(--spacing-2);">
+                                <span>Features</span>
+                                <span>Real-time sync</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between;">
+                                <span>Setup Time</span>
+                                <span>15 minutes</span>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary w-full" onclick="connectMParticle()">Connect</button>
+                    </div>
+
+                    <!-- RudderStack -->
+                    <div class="integration-card">
+                        <div class="integration-icon">🚀</div>
+                        <h4>RudderStack</h4>
+                        <p style="margin-bottom: var(--spacing-4);">Connect RudderStack for open-source customer data infrastructure.</p>
+                        <div style="margin-bottom: var(--spacing-4);">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: var(--spacing-2);">
+                                <span>Status</span>
+                                <span class="badge badge-warning">Not Connected</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: var(--spacing-2);">
+                                <span>Features</span>
+                                <span>Open-source CDP</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between;">
+                                <span>Setup Time</span>
+                                <span>20 minutes</span>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary w-full" onclick="connectRudderStack()">Connect</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Analytics & Marketing Tools -->
+        <div class="card mb-8">
+            <div class="card-header">
+                <h3 class="card-title">Analytics & Marketing Tools</h3>
+            </div>
+            <div class="card-body">
+                <div class="grid grid-3" style="gap: var(--spacing-6);">
+                    <!-- Google Analytics -->
+                    <div class="integration-card connected">
+                        <div class="integration-icon">📈</div>
+                        <h4>Google Analytics</h4>
+                        <p style="margin-bottom: var(--spacing-4);">Connect Google Analytics for enhanced campaign performance insights.</p>
+                        <div style="margin-bottom: var(--spacing-4);">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: var(--spacing-2);">
+                                <span>Status</span>
+                                <span class="badge badge-success">Connected</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: var(--spacing-2);">
+                                <span>Property</span>
+                                <span>Maria's Shoes GA4</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between;">
+                                <span>Last Sync</span>
+                                <span>1 hour ago</span>
+                            </div>
+                        </div>
+                        <button class="btn btn-secondary w-full" onclick="showGASettings()">Manage</button>
+                    </div>
+
+                    <!-- Facebook Pixel -->
+                    <div class="integration-card">
+                        <div class="integration-icon">📱</div>
+                        <h4>Facebook Pixel</h4>
+                        <p style="margin-bottom: var(--spacing-4);">Connect Facebook Pixel for advanced audience targeting and retargeting.</p>
+                        <div style="margin-bottom: var(--spacing-4);">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: var(--spacing-2);">
+                                <span>Status</span>
+                                <span class="badge badge-warning">Not Connected</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: var(--spacing-2);">
+                                <span>Features</span>
+                                <span>Audience sync</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between;">
+                                <span>Setup Time</span>
+                                <span>10 minutes</span>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary w-full" onclick="connectFacebookPixel()">Connect</button>
+                    </div>
+
+                    <!-- Google Ads -->
+                    <div class="integration-card">
+                        <div class="integration-icon">🎯</div>
+                        <h4>Google Ads</h4>
+                        <p style="margin-bottom: var(--spacing-4);">Connect Google Ads for cross-channel campaign optimization.</p>
+                        <div style="margin-bottom: var(--spacing-4);">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: var(--spacing-2);">
+                                <span>Status</span>
+                                <span class="badge badge-warning">Not Connected</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: var(--spacing-2);">
+                                <span>Features</span>
+                                <span>Audience sync</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between;">
+                                <span>Setup Time</span>
+                                <span>15 minutes</span>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary w-full" onclick="connectGoogleAds()">Connect</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Data Sync Status -->
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Data Sync Status</h3>
+                <button class="btn btn-secondary" onclick="refreshSyncStatus()">Refresh</button>
+            </div>
+            <div class="card-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Integration</th>
+                            <th>Data Type</th>
+                            <th>Last Sync</th>
+                            <th>Records Synced</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Shopify</td>
+                            <td>Products & Orders</td>
+                            <td>2 min ago</td>
+                            <td>1,247</td>
+                            <td><span class="badge badge-success">Success</span></td>
+                            <td>
+                                <button class="btn btn-sm btn-secondary">View Logs</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Segment CDP</td>
+                            <td>Customer Events</td>
+                            <td>5 min ago</td>
+                            <td>3,456</td>
+                            <td><span class="badge badge-success">Success</span></td>
+                            <td>
+                                <button class="btn btn-sm btn-secondary">View Logs</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Google Analytics</td>
+                            <td>Page Views & Events</td>
+                            <td>1 hour ago</td>
+                            <td>12,847</td>
+                            <td><span class="badge badge-success">Success</span></td>
+                            <td>
+                                <button class="btn btn-sm btn-secondary">View Logs</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>BigCommerce</td>
+                            <td>Products & Orders</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td><span class="badge badge-warning">Not Connected</span></td>
+                            <td>
+                                <button class="btn btn-sm btn-primary">Connect</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <!-- Shopify Settings Modal -->
+    <div id="shopifySettingsModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Shopify Integration Settings</h3>
+                <button class="modal-close" onclick="hideShopifySettings()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div style="margin-bottom: var(--spacing-6);">
+                    <h4 style="margin-bottom: var(--spacing-3);">Connection Details</h4>
+                    <div style="background: var(--gray-50); padding: var(--spacing-4); border-radius: var(--radius-md);">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: var(--spacing-2);">
+                            <span>Store URL:</span>
+                            <span>mariasshoes.myshopify.com</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; margin-bottom: var(--spacing-2);">
+                            <span>API Version:</span>
+                            <span>2024-01</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between;">
+                            <span>Connected:</span>
+                            <span>January 15, 2024</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin-bottom: var(--spacing-6);">
+                    <h4 style="margin-bottom: var(--spacing-3);">Sync Settings</h4>
+                    <div class="form-group">
+                        <label class="form-label">
+                            <input type="checkbox" checked style="margin-right: var(--spacing-2);"> Sync Products
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">
+                            <input type="checkbox" checked style="margin-right: var(--spacing-2);"> Sync Orders
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">
+                            <input type="checkbox" checked style="margin-right: var(--spacing-2);"> Sync Customers
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">
+                            <input type="checkbox" style="margin-right: var(--spacing-2);"> Sync Inventory
+                        </label>
+                    </div>
+                </div>
+
+                <div style="margin-bottom: var(--spacing-6);">
+                    <h4 style="margin-bottom: var(--spacing-3);">Sync Frequency</h4>
+                    <select class="form-select">
+                        <option value="realtime">Real-time (Recommended)</option>
+                        <option value="15min">Every 15 minutes</option>
+                        <option value="1hour">Every hour</option>
+                        <option value="6hours">Every 6 hours</option>
+                        <option value="daily">Daily</option>
+                    </select>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-danger" onclick="disconnectShopify()">Disconnect</button>
+                <button class="btn btn-primary" onclick="saveShopifySettings()">Save Settings</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Segment Settings Modal -->
+    <div id="segmentSettingsModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Segment CDP Settings</h3>
+                <button class="modal-close" onclick="hideSegmentSettings()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div style="margin-bottom: var(--spacing-6);">
+                    <h4 style="margin-bottom: var(--spacing-3);">Connection Details</h4>
+                    <div style="background: var(--gray-50); padding: var(--spacing-4); border-radius: var(--radius-md);">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: var(--spacing-2);">
+                            <span>Workspace:</span>
+                            <span>Maria's Shoes</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; margin-bottom: var(--spacing-2);">
+                            <span>Write Key:</span>
+                            <span>••••••••••••••••</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between;">
+                            <span>Connected:</span>
+                            <span>January 10, 2024</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin-bottom: var(--spacing-6);">
+                    <h4 style="margin-bottom: var(--spacing-3);">Event Types</h4>
+                    <div class="form-group">
+                        <label class="form-label">
+                            <input type="checkbox" checked style="margin-right: var(--spacing-2);"> Page Views
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">
+                            <input type="checkbox" checked style="margin-right: var(--spacing-2);"> Product Views
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">
+                            <input type="checkbox" checked style="margin-right: var(--spacing-2);"> Add to Cart
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">
+                            <input type="checkbox" checked style="margin-right: var(--spacing-2);"> Purchases
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">
+                            <input type="checkbox" style="margin-right: var(--spacing-2);"> User Signups
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-danger" onclick="disconnectSegment()">Disconnect</button>
+                <button class="btn btn-primary" onclick="saveSegmentSettings()">Save Settings</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Theme toggle functionality
+        function toggleTheme() {
+            const body = document.body;
+            const themeToggle = document.querySelector('.theme-toggle');
+            
+            if (body.getAttribute('data-theme') === 'dark') {
+                body.removeAttribute('data-theme');
+                themeToggle.textContent = '🌙';
+            } else {
+                body.setAttribute('data-theme', 'dark');
+                themeToggle.textContent = '☀️';
+            }
+        }
+
+        // Check for saved theme preference
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            document.body.setAttribute('data-theme', savedTheme);
+            const themeToggle = document.querySelector('.theme-toggle');
+            themeToggle.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+        }
+
+        // Save theme preference
+        document.querySelector('.theme-toggle').addEventListener('click', function() {
+            const currentTheme = document.body.getAttribute('data-theme');
+            localStorage.setItem('theme', currentTheme === 'dark' ? '' : 'dark');
+        });
+
+        // Modal functions
+        function showShopifySettings() {
+            document.getElementById('shopifySettingsModal').classList.add('show');
+        }
+
+        function hideShopifySettings() {
+            document.getElementById('shopifySettingsModal').classList.remove('show');
+        }
+
+        function showSegmentSettings() {
+            document.getElementById('segmentSettingsModal').classList.add('show');
+        }
+
+        function hideSegmentSettings() {
+            document.getElementById('segmentSettingsModal').classList.remove('show');
+        }
+
+        function showGASettings() {
+            alert('Google Analytics settings will be available in the next update.');
+        }
+
+        // Connection functions
+        function connectBigCommerce() {
+            if (confirm('Connect BigCommerce integration? This will redirect you to BigCommerce for authorization.')) {
+                alert('Redirecting to BigCommerce for authorization...');
+            }
+        }
+
+        function connectWooCommerce() {
+            if (confirm('Connect WooCommerce integration? You will need to install our plugin on your WordPress site.')) {
+                alert('Please install the EmailForce plugin on your WordPress site and follow the setup instructions.');
+            }
+        }
+
+        function connectMParticle() {
+            if (confirm('Connect mParticle integration? This will redirect you to mParticle for authorization.')) {
+                alert('Redirecting to mParticle for authorization...');
+            }
+        }
+
+        function connectRudderStack() {
+            if (confirm('Connect RudderStack integration? You will need to configure the connection in your RudderStack dashboard.')) {
+                alert('Please configure the EmailForce destination in your RudderStack dashboard.');
+            }
+        }
+
+        function connectFacebookPixel() {
+            if (confirm('Connect Facebook Pixel? You will need to provide your Pixel ID and access token.')) {
+                alert('Please provide your Facebook Pixel ID and access token in the settings.');
+            }
+        }
+
+        function connectGoogleAds() {
+            if (confirm('Connect Google Ads? This will redirect you to Google for authorization.')) {
+                alert('Redirecting to Google for authorization...');
+            }
+        }
+
+        // Settings functions
+        function saveShopifySettings() {
+            alert('Shopify settings saved successfully!');
+            hideShopifySettings();
+        }
+
+        function saveSegmentSettings() {
+            alert('Segment settings saved successfully!');
+            hideSegmentSettings();
+        }
+
+        function disconnectShopify() {
+            if (confirm('Are you sure you want to disconnect Shopify? This will stop all data syncing.')) {
+                alert('Shopify disconnected successfully.');
+                hideShopifySettings();
+            }
+        }
+
+        function disconnectSegment() {
+            if (confirm('Are you sure you want to disconnect Segment? This will stop all data syncing.')) {
+                alert('Segment disconnected successfully.');
+                hideSegmentSettings();
+            }
+        }
+
+        function refreshSyncStatus() {
+            alert('Sync status refreshed!');
+        }
+
+        // Close modals when clicking outside
+        window.addEventListener('click', function(e) {
+            if (e.target.classList.contains('modal')) {
+                e.target.classList.remove('show');
+            }
+        });
+    </script>
+</body>
+</html> 

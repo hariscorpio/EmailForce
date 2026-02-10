@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - EmailForce</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container-fluid">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon">E</div>
+                    EmailForce
+                </div>
+                <nav class="nav">
+                    <a href="dashboard.html" class="nav-link active">Dashboard</a>
+                    <a href="campaigns.html" class="nav-link">Campaigns</a>
+                    <a href="automations.html" class="nav-link">Automations</a>
+                    <a href="analytics.html" class="nav-link">Analytics</a>
+                </nav>
+                <div class="user-menu">
+                    <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+                    <div class="user-avatar">M</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <nav class="sidebar-nav">
+            <div class="sidebar-section">
+                <div class="sidebar-title">Overview</div>
+                <a href="dashboard.html" class="sidebar-link active">
+                    <span class="sidebar-icon">📊</span>
+                    Dashboard
+                </a>
+                <a href="analytics.html" class="sidebar-link">
+                    <span class="sidebar-icon">📈</span>
+                    Analytics
+                </a>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="sidebar-title">Campaigns</div>
+                <a href="campaigns.html" class="sidebar-link">
+                    <span class="sidebar-icon">📧</span>
+                    Campaign Builder
+                </a>
+                <a href="campaigns.html#templates" class="sidebar-link">
+                    <span class="sidebar-icon">📋</span>
+                    Templates
+                </a>
+                <a href="campaigns.html#drafts" class="sidebar-link">
+                    <span class="sidebar-icon">📝</span>
+                    Drafts
+                </a>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="sidebar-title">Automations</div>
+                <a href="automations.html" class="sidebar-link">
+                    <span class="sidebar-icon">🤖</span>
+                    AI Agents
+                </a>
+                <a href="automations.html#recovery" class="sidebar-link">
+                    <span class="sidebar-icon">💰</span>
+                    Revenue Recovery
+                </a>
+                <a href="automations.html#workflows" class="sidebar-link">
+                    <span class="sidebar-icon">⚡</span>
+                    Workflows
+                </a>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="sidebar-title">Compliance</div>
+                <a href="compliance-guard.html" class="sidebar-link">
+                    <span class="sidebar-icon">🛡️</span>
+                    Compliance Guard
+                </a>
+                <a href="compliance-guard.html#consent" class="sidebar-link">
+                    <span class="sidebar-icon">✅</span>
+                    Consent Management
+                </a>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="sidebar-title">Settings</div>
+                <a href="integrations.html" class="sidebar-link">
+                    <span class="sidebar-icon">🔗</span>
+                    Integrations
+                </a>
+                <a href="#" class="sidebar-link">
+                    <span class="sidebar-icon">👥</span>
+                    Team
+                </a>
+                <a href="#" class="sidebar-link">
+                    <span class="sidebar-icon">⚙️</span>
+                    Settings
+                </a>
+            </div>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Page Header -->
+        <div class="page-header">
+            <h1 class="page-title">Welcome back, Maria!</h1>
+            <p class="page-subtitle">Here's what's happening with your email marketing today.</p>
+        </div>
+
+        <!-- AI Agent Status -->
+        <div class="ai-agent">
+            <div class="ai-status">
+                <div class="ai-status-indicator"></div>
+                <span>AI Agents are actively working</span>
+            </div>
+            <h3>Your AI Agents are running smoothly</h3>
+            <p>Revenue Recovery Agent has recovered $1,247 in the last 24 hours. Compliance Guard has processed 2,341 emails with 100% compliance rate.</p>
+            <button class="btn btn-secondary" onclick="window.location.href='automations.html'">View Details</button>
+        </div>
+
+        <!-- Stats Grid -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-value">$12,847</div>
+                <div class="stat-label">Revenue Generated</div>
+                <div class="stat-change positive">
+                    <span>↗</span>
+                    <span>+15.3% vs last month</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">24.7%</div>
+                <div class="stat-label">Open Rate</div>
+                <div class="stat-change positive">
+                    <span>↗</span>
+                    <span>+2.1% vs last month</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">8.9%</div>
+                <div class="stat-label">Click Rate</div>
+                <div class="stat-change positive">
+                    <span>↗</span>
+                    <span>+1.2% vs last month</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">2,341</div>
+                <div class="stat-label">Emails Sent</div>
+                <div class="stat-change positive">
+                    <span>↗</span>
+                    <span>+18.5% vs last month</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="card mb-8">
+            <div class="card-header">
+                <h3 class="card-title">Quick Actions</h3>
+            </div>
+            <div class="card-body">
+                <div class="grid grid-4">
+                    <button class="btn btn-primary" onclick="window.location.href='campaigns.html'">
+                        <span>📧</span>
+                        Create Campaign
+                    </button>
+                    <button class="btn btn-secondary" onclick="window.location.href='automations.html'">
+                        <span>🤖</span>
+                        Setup AI Agent
+                    </button>
+                    <button class="btn btn-secondary" onclick="window.location.href='compliance-guard.html'">
+                        <span>🛡️</span>
+                        Configure Compliance
+                    </button>
+                    <button class="btn btn-secondary" onclick="window.location.href='integrations.html'">
+                        <span>🔗</span>
+                        Connect Platform
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recent Activity & Performance -->
+        <div class="grid grid-2" style="gap: var(--spacing-8);">
+            <!-- Recent Activity -->
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Recent Activity</h3>
+                </div>
+                <div class="card-body">
+                    <div style="margin-bottom: var(--spacing-4);">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--spacing-2);">
+                            <span style="font-weight: 500;">Revenue Recovery Agent</span>
+                            <span style="color: var(--success); font-size: var(--font-size-sm);">2 min ago</span>
+                        </div>
+                        <p style="color: var(--gray-600); font-size: var(--font-size-sm);">Recovered $89 from abandoned cart email</p>
+                    </div>
+                    <div style="margin-bottom: var(--spacing-4);">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--spacing-2);">
+                            <span style="font-weight: 500;">Compliance Guard</span>
+                            <span style="color: var(--success); font-size: var(--font-size-sm);">15 min ago</span>
+                        </div>
+                        <p style="color: var(--gray-600); font-size: var(--font-size-sm);">Processed 156 emails with GDPR compliance</p>
+                    </div>
+                    <div style="margin-bottom: var(--spacing-4);">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--spacing-2);">
+                            <span style="font-weight: 500;">Campaign Launched</span>
+                            <span style="color: var(--success); font-size: var(--font-size-sm);">1 hour ago</span>
+                        </div>
+                        <p style="color: var(--gray-600); font-size: var(--font-size-sm);">"Summer Sale" campaign sent to 2,341 subscribers</p>
+                    </div>
+                    <div style="margin-bottom: var(--spacing-4);">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--spacing-2);">
+                            <span style="font-weight: 500;">AI Optimization</span>
+                            <span style="color: var(--success); font-size: var(--font-size-sm);">2 hours ago</span>
+                        </div>
+                        <p style="color: var(--gray-600); font-size: var(--font-size-sm);">Subject line A/B test completed - Variant B wins</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Performance Chart -->
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Revenue Performance</h3>
+                </div>
+                <div class="card-body">
+                    <div style="height: 200px; display: flex; align-items: end; justify-content: space-between; gap: var(--spacing-2);">
+                        <div style="background: var(--primary-blue); width: 30px; height: 60%; border-radius: var(--radius-sm);"></div>
+                        <div style="background: var(--primary-blue); width: 30px; height: 80%; border-radius: var(--radius-sm);"></div>
+                        <div style="background: var(--primary-blue); width: 30px; height: 45%; border-radius: var(--radius-sm);"></div>
+                        <div style="background: var(--primary-blue); width: 30px; height: 90%; border-radius: var(--radius-sm);"></div>
+                        <div style="background: var(--primary-blue); width: 30px; height: 75%; border-radius: var(--radius-sm);"></div>
+                        <div style="background: var(--primary-blue); width: 30px; height: 95%; border-radius: var(--radius-sm);"></div>
+                        <div style="background: var(--accent-green); width: 30px; height: 100%; border-radius: var(--radius-sm);"></div>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; margin-top: var(--spacing-4); font-size: var(--font-size-sm); color: var(--gray-600);">
+                        <span>Mon</span>
+                        <span>Tue</span>
+                        <span>Wed</span>
+                        <span>Thu</span>
+                        <span>Fri</span>
+                        <span>Sat</span>
+                        <span>Today</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Active Campaigns -->
+        <div class="card mt-8">
+            <div class="card-header">
+                <h3 class="card-title">Active Campaigns</h3>
+            </div>
+            <div class="card-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Campaign Name</th>
+                            <th>Status</th>
+                            <th>Sent</th>
+                            <th>Open Rate</th>
+                            <th>Click Rate</th>
+                            <th>Revenue</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Summer Sale - 25% Off</td>
+                            <td><span class="badge badge-success">Active</span></td>
+                            <td>2,341</td>
+                            <td>24.7%</td>
+                            <td>8.9%</td>
+                            <td>$3,247</td>
+                            <td>
+                                <button class="btn btn-sm btn-secondary">View</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Abandoned Cart Recovery</td>
+                            <td><span class="badge badge-success">Active</span></td>
+                            <td>156</td>
+                            <td>31.2%</td>
+                            <td>12.4%</td>
+                            <td>$1,247</td>
+                            <td>
+                                <button class="btn btn-sm btn-secondary">View</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Welcome Series</td>
+                            <td><span class="badge badge-info">Draft</span></td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>
+                                <button class="btn btn-sm btn-primary">Edit</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Theme toggle functionality
+        function toggleTheme() {
+            const body = document.body;
+            const themeToggle = document.querySelector('.theme-toggle');
+            
+            if (body.getAttribute('data-theme') === 'dark') {
+                body.removeAttribute('data-theme');
+                themeToggle.textContent = '🌙';
+            } else {
+                body.setAttribute('data-theme', 'dark');
+                themeToggle.textContent = '☀️';
+            }
+        }
+
+        // Check for saved theme preference
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            document.body.setAttribute('data-theme', savedTheme);
+            const themeToggle = document.querySelector('.theme-toggle');
+            themeToggle.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+        }
+
+        // Save theme preference
+        document.querySelector('.theme-toggle').addEventListener('click', function() {
+            const currentTheme = document.body.getAttribute('data-theme');
+            localStorage.setItem('theme', currentTheme === 'dark' ? '' : 'dark');
+        });
+
+        // Animate stats on page load
+        window.addEventListener('load', function() {
+            const statValues = document.querySelectorAll('.stat-value');
+            statValues.forEach(stat => {
+                const finalValue = stat.textContent;
+                const isCurrency = finalValue.includes('$');
+                const isPercentage = finalValue.includes('%');
+                
+                if (isCurrency) {
+                    const numericValue = parseInt(finalValue.replace(/[$,]/g, ''));
+                    animateNumber(stat, 0, numericValue, isCurrency);
+                } else if (isPercentage) {
+                    const numericValue = parseFloat(finalValue);
+                    animateNumber(stat, 0, numericValue, false, true);
+                } else {
+                    const numericValue = parseInt(finalValue.replace(/,/g, ''));
+                    animateNumber(stat, 0, numericValue);
+                }
+            });
+        });
+
+        function animateNumber(element, start, end, isCurrency = false, isPercentage = false) {
+            const duration = 1000;
+            const startTime = performance.now();
+            
+            function update(currentTime) {
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                
+                const current = start + (end - start) * progress;
+                
+                if (isCurrency) {
+                    element.textContent = '$' + Math.floor(current).toLocaleString();
+                } else if (isPercentage) {
+                    element.textContent = current.toFixed(1) + '%';
+                } else {
+                    element.textContent = Math.floor(current).toLocaleString();
+                }
+                
+                if (progress < 1) {
+                    requestAnimationFrame(update);
+                }
+            }
+            
+            requestAnimationFrame(update);
+        }
+    </script>
+</body>
+</html> 

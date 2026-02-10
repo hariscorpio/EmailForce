@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics - EmailForce</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container-fluid">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon">E</div>
+                    EmailForce
+                </div>
+                <nav class="nav">
+                    <a href="dashboard.html" class="nav-link">Dashboard</a>
+                    <a href="campaigns.html" class="nav-link">Campaigns</a>
+                    <a href="automations.html" class="nav-link">Automations</a>
+                    <a href="analytics.html" class="nav-link active">Analytics</a>
+                </nav>
+                <div class="user-menu">
+                    <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+                    <div class="user-avatar">M</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <nav class="sidebar-nav">
+            <div class="sidebar-section">
+                <div class="sidebar-title">Overview</div>
+                <a href="dashboard.html" class="sidebar-link">
+                    <span class="sidebar-icon">📊</span>
+                    Dashboard
+                </a>
+                <a href="analytics.html" class="sidebar-link active">
+                    <span class="sidebar-icon">📈</span>
+                    Analytics
+                </a>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="sidebar-title">Campaigns</div>
+                <a href="campaigns.html" class="sidebar-link">
+                    <span class="sidebar-icon">📧</span>
+                    Campaign Builder
+                </a>
+                <a href="campaigns.html#templates" class="sidebar-link">
+                    <span class="sidebar-icon">📋</span>
+                    Templates
+                </a>
+                <a href="campaigns.html#drafts" class="sidebar-link">
+                    <span class="sidebar-icon">📝</span>
+                    Drafts
+                </a>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="sidebar-title">Automations</div>
+                <a href="automations.html" class="sidebar-link">
+                    <span class="sidebar-icon">🤖</span>
+                    AI Agents
+                </a>
+                <a href="automations.html#recovery" class="sidebar-link">
+                    <span class="sidebar-icon">💰</span>
+                    Revenue Recovery
+                </a>
+                <a href="automations.html#workflows" class="sidebar-link">
+                    <span class="sidebar-icon">⚡</span>
+                    Workflows
+                </a>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="sidebar-title">Compliance</div>
+                <a href="compliance-guard.html" class="sidebar-link">
+                    <span class="sidebar-icon">🛡️</span>
+                    Compliance Guard
+                </a>
+                <a href="compliance-guard.html#consent" class="sidebar-link">
+                    <span class="sidebar-icon">✅</span>
+                    Consent Management
+                </a>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="sidebar-title">Settings</div>
+                <a href="integrations.html" class="sidebar-link">
+                    <span class="sidebar-icon">🔗</span>
+                    Integrations
+                </a>
+                <a href="#" class="sidebar-link">
+                    <span class="sidebar-icon">👥</span>
+                    Team
+                </a>
+                <a href="#" class="sidebar-link">
+                    <span class="sidebar-icon">⚙️</span>
+                    Settings
+                </a>
+            </div>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Page Header -->
+        <div class="page-header">
+            <h1 class="page-title">Analytics & Performance</h1>
+            <p class="page-subtitle">Track your email marketing performance and AI agent insights.</p>
+        </div>
+
+        <!-- Date Range Selector -->
+        <div class="card mb-8">
+            <div class="card-body">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <div style="display: flex; gap: var(--spacing-4); align-items: center;">
+                        <label class="form-label" style="margin-bottom: 0;">Date Range:</label>
+                        <select class="form-select" style="width: auto;">
+                            <option value="7">Last 7 days</option>
+                            <option value="30" selected>Last 30 days</option>
+                            <option value="90">Last 90 days</option>
+                            <option value="365">Last year</option>
+                            <option value="custom">Custom range</option>
+                        </select>
+                    </div>
+                    <button class="btn btn-secondary" onclick="exportAnalytics()">Export Report</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Key Metrics -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-value">$12,847</div>
+                <div class="stat-label">Total Revenue Generated</div>
+                <div class="stat-change positive">
+                    <span>↗</span>
+                    <span>+15.3% vs last period</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">24.7%</div>
+                <div class="stat-label">Average Open Rate</div>
+                <div class="stat-change positive">
+                    <span>↗</span>
+                    <span>+2.1% vs last period</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">8.9%</div>
+                <div class="stat-label">Average Click Rate</div>
+                <div class="stat-change positive">
+                    <span>↗</span>
+                    <span>+1.2% vs last period</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">2.3%</div>
+                <div class="stat-label">Conversion Rate</div>
+                <div class="stat-change positive">
+                    <span>↗</span>
+                    <span>+0.4% vs last period</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Performance Charts -->
+        <div class="grid grid-2" style="gap: var(--spacing-8); margin-bottom: var(--spacing-8);">
+            <!-- Revenue Trend -->
+            <div class="chart-container">
+                <h3 style="margin-bottom: var(--spacing-6);">Revenue Trend</h3>
+                <div style="height: 300px; display: flex; align-items: end; justify-content: space-between; gap: var(--spacing-2);">
+                    <div style="background: var(--primary-blue); width: 40px; height: 60%; border-radius: var(--radius-sm);"></div>
+                    <div style="background: var(--primary-blue); width: 40px; height: 80%; border-radius: var(--radius-sm);"></div>
+                    <div style="background: var(--primary-blue); width: 40px; height: 45%; border-radius: var(--radius-sm);"></div>
+                    <div style="background: var(--primary-blue); width: 40px; height: 90%; border-radius: var(--radius-sm);"></div>
+                    <div style="background: var(--primary-blue); width: 40px; height: 75%; border-radius: var(--radius-sm);"></div>
+                    <div style="background: var(--primary-blue); width: 40px; height: 95%; border-radius: var(--radius-sm);"></div>
+                    <div style="background: var(--accent-green); width: 40px; height: 100%; border-radius: var(--radius-sm);"></div>
+                </div>
+                <div style="display: flex; justify-content: space-between; margin-top: var(--spacing-4); font-size: var(--font-size-sm); color: var(--gray-600);">
+                    <span>Week 1</span>
+                    <span>Week 2</span>
+                    <span>Week 3</span>
+                    <span>Week 4</span>
+                    <span>Week 5</span>
+                    <span>Week 6</span>
+                    <span>Current</span>
+                </div>
+            </div>
+
+            <!-- Engagement Metrics -->
+            <div class="chart-container">
+                <h3 style="margin-bottom: var(--spacing-6);">Engagement Metrics</h3>
+                <div style="margin-bottom: var(--spacing-6);">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--spacing-2);">
+                        <span>Open Rate</span>
+                        <span style="font-weight: 600;">24.7%</span>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar" style="width: 24.7%;"></div>
+                    </div>
+                </div>
+                <div style="margin-bottom: var(--spacing-6);">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--spacing-2);">
+                        <span>Click Rate</span>
+                        <span style="font-weight: 600;">8.9%</span>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar" style="width: 8.9%;"></div>
+                    </div>
+                </div>
+                <div style="margin-bottom: var(--spacing-6);">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--spacing-2);">
+                        <span>Conversion Rate</span>
+                        <span style="font-weight: 600;">2.3%</span>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar" style="width: 2.3%;"></div>
+                    </div>
+                </div>
+                <div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--spacing-2);">
+                        <span>Unsubscribe Rate</span>
+                        <span style="font-weight: 600;">0.8%</span>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar" style="width: 0.8%; background: var(--error);"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- AI Agent Performance -->
+        <div class="card mb-8">
+            <div class="card-header">
+                <h3 class="card-title">AI Agent Performance</h3>
+            </div>
+            <div class="card-body">
+                <div class="grid grid-2" style="gap: var(--spacing-8);">
+                    <!-- Revenue Recovery Agent -->
+                    <div>
+                        <h4 style="margin-bottom: var(--spacing-4);">💰 Revenue Recovery Agent</h4>
+                        <div style="background: var(--gray-50); padding: var(--spacing-4); border-radius: var(--radius-md); margin-bottom: var(--spacing-4);">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: var(--spacing-2);">
+                                <span>Revenue Recovered</span>
+                                <span style="font-weight: 600; color: var(--success);">$1,247</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: var(--spacing-2);">
+                                <span>Emails Sent</span>
+                                <span>156</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: var(--spacing-2);">
+                                <span>Conversion Rate</span>
+                                <span>12.4%</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between;">
+                                <span>ROI</span>
+                                <span style="color: var(--success);">+1,247%</span>
+                            </div>
+                        </div>
+                        <div style="background: var(--secondary-blue); padding: var(--spacing-4); border-radius: var(--radius-md);">
+                            <h5 style="margin-bottom: var(--spacing-2);">🤖 AI Learning Insights</h5>
+                            <ul style="color: var(--gray-700); font-size: var(--font-size-sm);">
+                                <li>10% discount performs better than 15% for carts under $50</li>
+                                <li>Sending within 1 hour increases conversion by 23%</li>
+                                <li>Personalized product images boost click rates by 18%</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Content Optimization Agent -->
+                    <div>
+                        <h4 style="margin-bottom: var(--spacing-4);">🎨 Content Optimization Agent</h4>
+                        <div style="background: var(--gray-50); padding: var(--spacing-4); border-radius: var(--radius-md); margin-bottom: var(--spacing-4);">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: var(--spacing-2);">
+                                <span>A/B Tests Completed</span>
+                                <span>24</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: var(--spacing-2);">
+                                <span>Active Tests</span>
+                                <span>8</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: var(--spacing-2);">
+                                <span>Open Rate Improvement</span>
+                                <span style="color: var(--success);">+15.3%</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between;">
+                                <span>Click Rate Improvement</span>
+                                <span style="color: var(--success);">+8.7%</span>
+                            </div>
+                        </div>
+                        <div style="background: var(--secondary-blue); padding: var(--spacing-4); border-radius: var(--radius-md);">
+                            <h5 style="margin-bottom: var(--spacing-2);">🤖 AI Learning Insights</h5>
+                            <ul style="color: var(--gray-700); font-size: var(--font-size-sm);">
+                                <li>Subject lines with emojis perform 12% better</li>
+                                <li>Personalized preview text increases opens by 8%</li>
+                                <li>Urgency messaging works best on Tuesdays</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Campaign Performance -->
+        <div class="card mb-8">
+            <div class="card-header">
+                <h3 class="card-title">Campaign Performance</h3>
+                <button class="btn btn-secondary" onclick="showCampaignFilters()">Filter</button>
+            </div>
+            <div class="card-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Campaign Name</th>
+                            <th>Type</th>
+                            <th>Sent</th>
+                            <th>Opens</th>
+                            <th>Clicks</th>
+                            <th>Conversions</th>
+                            <th>Revenue</th>
+                            <th>ROI</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Summer Sale - 25% Off</td>
+                            <td><span class="badge badge-success">Promotional</span></td>
+                            <td>2,341</td>
+                            <td>578 (24.7%)</td>
+                            <td>208 (8.9%)</td>
+                            <td>54 (2.3%)</td>
+                            <td>$3,247</td>
+                            <td style="color: var(--success);">+1,247%</td>
+                            <td>
+                                <button class="btn btn-sm btn-secondary">View Details</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Abandoned Cart Recovery</td>
+                            <td><span class="badge badge-info">Automated</span></td>
+                            <td>156</td>
+                            <td>49 (31.2%)</td>
+                            <td>19 (12.4%)</td>
+                            <td>19 (12.4%)</td>
+                            <td>$1,247</td>
+                            <td style="color: var(--success);">+∞</td>
+                            <td>
+                                <button class="btn btn-sm btn-secondary">View Details</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Welcome Series - Day 1</td>
+                            <td><span class="badge badge-warning">Workflow</span></td>
+                            <td>89</td>
+                            <td>30 (34.2%)</td>
+                            <td>11 (12.1%)</td>
+                            <td>3 (3.4%)</td>
+                            <td>$234</td>
+                            <td style="color: var(--success);">+1,170%</td>
+                            <td>
+                                <button class="btn btn-sm btn-secondary">View Details</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Product Launch - New Collection</td>
+                            <td><span class="badge badge-success">Promotional</span></td>
+                            <td>1,234</td>
+                            <td>296 (24.0%)</td>
+                            <td>89 (7.2%)</td>
+                            <td>18 (1.5%)</td>
+                            <td>$1,567</td>
+                            <td style="color: var(--success);">+783%</td>
+                            <td>
+                                <button class="btn btn-sm btn-secondary">View Details</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Audience Insights -->
+        <div class="grid grid-2" style="gap: var(--spacing-8);">
+            <!-- Top Performing Segments -->
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Top Performing Segments</h3>
+                </div>
+                <div class="card-body">
+                    <div style="margin-bottom: var(--spacing-4);">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--spacing-2);">
+                            <span style="font-weight: 500;">High-Value Customers</span>
+                            <span style="color: var(--success);">34.2% open rate</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 34.2%;"></div>
+                        </div>
+                    </div>
+                    <div style="margin-bottom: var(--spacing-4);">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--spacing-2);">
+                            <span style="font-weight: 500;">Recent Purchasers</span>
+                            <span style="color: var(--success);">28.7% open rate</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 28.7%;"></div>
+                        </div>
+                    </div>
+                    <div style="margin-bottom: var(--spacing-4);">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--spacing-2);">
+                            <span style="font-weight: 500;">Cart Abandoners</span>
+                            <span style="color: var(--success);">31.2% open rate</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 31.2%;"></div>
+                        </div>
+                    </div>
+                    <div style="margin-bottom: var(--spacing-4);">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--spacing-2);">
+                            <span style="font-weight: 500;">New Subscribers</span>
+                            <span style="color: var(--success);">34.2% open rate</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 34.2%;"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--spacing-2);">
+                            <span style="font-weight: 500;">Inactive Subscribers</span>
+                            <span style="color: var(--error);">12.4% open rate</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 12.4%; background: var(--error);"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Send Time Analysis -->
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Optimal Send Times</h3>
+                </div>
+                <div class="card-body">
+                    <div style="margin-bottom: var(--spacing-4);">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--spacing-2);">
+                            <span>Tuesday 10:00 AM</span>
+                            <span style="color: var(--success);">32.1% open rate</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 32.1%;"></div>
+                        </div>
+                    </div>
+                    <div style="margin-bottom: var(--spacing-4);">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--spacing-2);">
+                            <span>Thursday 2:00 PM</span>
+                            <span style="color: var(--success);">29.8% open rate</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 29.8%;"></div>
+                        </div>
+                    </div>
+                    <div style="margin-bottom: var(--spacing-4);">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--spacing-2);">
+                            <span>Monday 9:00 AM</span>
+                            <span style="color: var(--success);">27.4% open rate</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 27.4%;"></div>
+                        </div>
+                    </div>
+                    <div style="margin-bottom: var(--spacing-4);">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--spacing-2);">
+                            <span>Wednesday 11:00 AM</span>
+                            <span style="color: var(--success);">26.9% open rate</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 26.9%;"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--spacing-2);">
+                            <span>Friday 3:00 PM</span>
+                            <span style="color: var(--warning);">22.1% open rate</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 22.1%; background: var(--warning);"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Theme toggle functionality
+        function toggleTheme() {
+            const body = document.body;
+            const themeToggle = document.querySelector('.theme-toggle');
+            
+            if (body.getAttribute('data-theme') === 'dark') {
+                body.removeAttribute('data-theme');
+                themeToggle.textContent = '🌙';
+            } else {
+                body.setAttribute('data-theme', 'dark');
+                themeToggle.textContent = '☀️';
+            }
+        }
+
+        // Check for saved theme preference
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            document.body.setAttribute('data-theme', savedTheme);
+            const themeToggle = document.querySelector('.theme-toggle');
+            themeToggle.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+        }
+
+        // Save theme preference
+        document.querySelector('.theme-toggle').addEventListener('click', function() {
+            const currentTheme = document.body.getAttribute('data-theme');
+            localStorage.setItem('theme', currentTheme === 'dark' ? '' : 'dark');
+        });
+
+        // Analytics functions
+        function exportAnalytics() {
+            alert('Analytics report export started. You will receive an email when it\'s ready.');
+        }
+
+        function showCampaignFilters() {
+            alert('Campaign filters will be available in the next update.');
+        }
+
+        // Animate charts on page load
+        window.addEventListener('load', function() {
+            // Animate progress bars
+            const progressBars = document.querySelectorAll('.progress-bar');
+            progressBars.forEach(bar => {
+                const width = bar.style.width;
+                bar.style.width = '0%';
+                setTimeout(() => {
+                    bar.style.width = width;
+                }, 500);
+            });
+
+            // Animate chart bars
+            const chartBars = document.querySelectorAll('.chart-container .progress-bar, .chart-container div[style*="background"]');
+            chartBars.forEach((bar, index) => {
+                const originalHeight = bar.style.height;
+                bar.style.height = '0%';
+                setTimeout(() => {
+                    bar.style.height = originalHeight;
+                }, 500 + (index * 100));
+            });
+        });
+    </script>
+</body>
+</html> 

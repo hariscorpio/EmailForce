@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EmailForce - Intelligent Email Marketing Platform</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Skip link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo" aria-label="EmailForce Home">
+                    <div class="logo-icon" aria-hidden="true">E</div>
+                    EmailForce
+                </a>
+                
+                <!-- Mobile menu toggle -->
+                <button class="mobile-menu-toggle" 
+                        aria-label="Toggle navigation menu" 
+                        aria-expanded="false"
+                        onclick="toggleMobileMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                
+                <nav class="nav" role="navigation" aria-label="Main navigation">
+                    <a href="#features" class="nav-link">Features</a>
+                    <a href="#pricing" class="nav-link">Pricing</a>
+                    <a href="#about" class="nav-link">About</a>
+                    <button class="btn btn-secondary" onclick="showLoginModal()" aria-label="Sign in to EmailForce">Sign In</button>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="hero" style="background: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-purple) 100%); color: white; padding: var(--spacing-20) 0 var(--spacing-16); text-align: center; position: relative; overflow: hidden;">
+            <!-- Background pattern for visual interest -->
+            <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; opacity: 0.1; background-image: radial-gradient(circle at 25% 25%, rgba(255,255,255,0.2) 0%, transparent 50%), radial-gradient(circle at 75% 75%, rgba(255,255,255,0.1) 0%, transparent 50%);"></div>
+            
+            <div class="container" style="position: relative; z-index: 1;">
+                <h1 style="font-size: clamp(2.5rem, 5vw, 4rem); margin-bottom: var(--spacing-6); color: white; line-height: 1.1;">
+                    Beyond Automation.<br>
+                    <span style="color: var(--accent-green);">Autonomous.</span>
+                </h1>
+                <p class="lead" style="font-size: clamp(1.125rem, 2.5vw, 1.5rem); margin-bottom: var(--spacing-10); opacity: 0.95; max-width: 700px; margin-left: auto; margin-right: auto; line-height: 1.6;">
+                    The first AI-powered email marketing platform that autonomously designs, optimizes, and personalizes revenue-generating campaigns.
+                </p>
+                <div style="display: flex; gap: var(--spacing-4); justify-content: center; flex-wrap: wrap; align-items: center;">
+                    <button class="btn btn-xl" style="background: var(--accent-green); color: white; font-size: var(--font-size-lg); box-shadow: var(--shadow-lg);" onclick="showLoginModal()" aria-label="Start your free trial of EmailForce">
+                        <span style="margin-right: var(--spacing-2);">🚀</span>
+                        Start Free Trial
+                    </button>
+                    <button class="btn btn-xl btn-outline" style="border-color: white; color: white; font-size: var(--font-size-lg);" aria-label="Watch EmailForce demo video">
+                        <span style="margin-right: var(--spacing-2);">▶️</span>
+                        Watch Demo
+                    </button>
+                </div>
+                
+                <!-- Trust indicators -->
+                <div style="margin-top: var(--spacing-12); opacity: 0.8;">
+                    <p style="font-size: var(--font-size-sm); margin-bottom: var(--spacing-4); text-transform: uppercase; letter-spacing: 0.1em;">Trusted by forward-thinking marketers</p>
+                    <div style="display: flex; justify-content: center; gap: var(--spacing-8); flex-wrap: wrap; align-items: center;">
+                        <span style="font-size: var(--font-size-sm);">🏆 15,000+ campaigns launched</span>
+                        <span style="font-size: var(--font-size-sm);">📈 47% average revenue increase</span>
+                        <span style="font-size: var(--font-size-sm);">⚡ 90% faster campaign creation</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" style="padding: var(--spacing-20) 0; background: var(--white);">
+            <div class="container">
+                <div class="text-center" style="margin-bottom: var(--spacing-16);">
+                    <h2 style="font-size: clamp(2rem, 4vw, 2.5rem); margin-bottom: var(--spacing-6); color: var(--gray-900);">
+                        Powerful AI Agents That Work For You
+                    </h2>
+                    <p class="lead" style="font-size: var(--font-size-lg); color: var(--gray-600); max-width: 700px; margin: 0 auto; line-height: 1.7;">
+                        Our AI agents autonomously handle the complex tasks that slow down your marketing team, 
+                        so you can focus on strategy and growth.
+                    </p>
+                </div>
+
+                <div class="grid grid-3" style="gap: var(--spacing-8);">
+                    <!-- Compliance Guard -->
+                    <article class="card" style="transition: transform var(--transition-normal), box-shadow var(--transition-normal);">
+                        <div class="card-body text-center" style="padding: var(--spacing-8);">
+                            <div style="width: 100px; height: 100px; background: linear-gradient(135deg, var(--secondary-blue) 0%, #f0f9ff 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto var(--spacing-8); box-shadow: var(--shadow-md);">
+                                <span style="font-size: 2.5rem; color: var(--primary-blue);" aria-hidden="true">🛡️</span>
+                            </div>
+                            <h3 style="margin-bottom: var(--spacing-4); color: var(--gray-900);">Compliance Guard</h3>
+                            <p style="margin-bottom: var(--spacing-6); line-height: 1.6; color: var(--gray-600);">
+                                Automatically enforce GDPR, CCPA, and regional regulations. Set rules once, and our AI ensures every email is compliant.
+                            </p>
+                            <ul style="text-align: left; margin-top: var(--spacing-4); list-style: none; padding: 0;">
+                                <li style="margin-bottom: var(--spacing-3); padding-left: var(--spacing-6); position: relative;">
+                                    <span style="position: absolute; left: 0; color: var(--success); font-weight: bold;">✓</span>
+                                    Automatic legal disclaimers
+                                </li>
+                                <li style="margin-bottom: var(--spacing-3); padding-left: var(--spacing-6); position: relative;">
+                                    <span style="position: absolute; left: 0; color: var(--success); font-weight: bold;">✓</span>
+                                    Consent management
+                                </li>
+                                <li style="margin-bottom: var(--spacing-3); padding-left: var(--spacing-6); position: relative;">
+                                    <span style="position: absolute; left: 0; color: var(--success); font-weight: bold;">✓</span>
+                                    Regional compliance
+                                </li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <!-- Revenue Recovery Agent -->
+                    <article class="card" style="transition: transform var(--transition-normal), box-shadow var(--transition-normal);">
+                        <div class="card-body text-center" style="padding: var(--spacing-8);">
+                            <div style="width: 100px; height: 100px; background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto var(--spacing-8); box-shadow: var(--shadow-md);">
+                                <span style="font-size: 2.5rem; color: var(--accent-green);" aria-hidden="true">💰</span>
+                            </div>
+                            <h3 style="margin-bottom: var(--spacing-4); color: var(--gray-900);">Revenue Recovery Agent</h3>
+                            <p style="margin-bottom: var(--spacing-6); line-height: 1.6; color: var(--gray-600);">
+                                AI that works 24/7 to recover abandoned carts. Continuously tests and optimizes to maximize your recovered revenue.
+                            </p>
+                            <ul style="text-align: left; margin-top: var(--spacing-4); list-style: none; padding: 0;">
+                                <li style="margin-bottom: var(--spacing-3); padding-left: var(--spacing-6); position: relative;">
+                                    <span style="position: absolute; left: 0; color: var(--success); font-weight: bold;">✓</span>
+                                    Autonomous A/B testing
+                                </li>
+                                <li style="margin-bottom: var(--spacing-3); padding-left: var(--spacing-6); position: relative;">
+                                    <span style="position: absolute; left: 0; color: var(--success); font-weight: bold;">✓</span>
+                                    Dynamic offers
+                                </li>
+                                <li style="margin-bottom: var(--spacing-3); padding-left: var(--spacing-6); position: relative;">
+                                    <span style="position: absolute; left: 0; color: var(--success); font-weight: bold;">✓</span>
+                                    Performance optimization
+                                </li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <!-- Dynamic Content Generator -->
+                    <article class="card" style="transition: transform var(--transition-normal), box-shadow var(--transition-normal);">
+                        <div class="card-body text-center" style="padding: var(--spacing-8);">
+                            <div style="width: 100px; height: 100px; background: linear-gradient(135deg, #f3f4ff 0%, #e0e7ff 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto var(--spacing-8); box-shadow: var(--shadow-md);">
+                                <span style="font-size: 2.5rem; color: var(--accent-purple);" aria-hidden="true">🎨</span>
+                            </div>
+                            <h3 style="margin-bottom: var(--spacing-4); color: var(--gray-900);">Dynamic Content Generator</h3>
+                            <p style="margin-bottom: var(--spacing-6); line-height: 1.6; color: var(--gray-600);">
+                                Generate personalized email variants for different segments automatically. Connect your CDP and let AI create unique content.
+                            </p>
+                            <ul style="text-align: left; margin-top: var(--spacing-4); list-style: none; padding: 0;">
+                                <li style="margin-bottom: var(--spacing-3); padding-left: var(--spacing-6); position: relative;">
+                                    <span style="position: absolute; left: 0; color: var(--success); font-weight: bold;">✓</span>
+                                    CDP integration
+                                </li>
+                                <li style="margin-bottom: var(--spacing-3); padding-left: var(--spacing-6); position: relative;">
+                                    <span style="position: absolute; left: 0; color: var(--success); font-weight: bold;">✓</span>
+                                    AI-generated variants
+                                </li>
+                                <li style="margin-bottom: var(--spacing-3); padding-left: var(--spacing-6); position: relative;">
+                                    <span style="position: absolute; left: 0; color: var(--success); font-weight: bold;">✓</span>
+                                    Hyper-personalization
+                                </li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+    <!-- User Journey Section -->
+    <section style="padding: var(--spacing-16) 0; background: var(--gray-50);">
+        <div class="container">
+            <div class="text-center" style="margin-bottom: var(--spacing-12);">
+                <h2 style="font-size: var(--font-size-3xl); margin-bottom: var(--spacing-4);">From Weeks to Hours</h2>
+                <p style="font-size: var(--font-size-lg); color: var(--gray-600);">
+                    See how EmailForce transforms your marketing workflow
+                </p>
+            </div>
+
+            <div class="grid grid-2" style="gap: var(--spacing-8); align-items: center;">
+                <div>
+                    <h3 style="margin-bottom: var(--spacing-4);">Maria's Story: E-commerce Marketer</h3>
+                    <p style="margin-bottom: var(--spacing-6);">
+                        "One wrong email could lead to a massive fine. How am I supposed to be a creative marketer and a compliance officer at the same time?"
+                    </p>
+                    <div style="background: var(--white); padding: var(--spacing-6); border-radius: var(--radius-lg); margin-bottom: var(--spacing-4);">
+                        <h4 style="color: var(--success); margin-bottom: var(--spacing-2);">✅ With EmailForce</h4>
+                        <ul style="color: var(--gray-700);">
+                            <li>Compliance Guard automatically enforces regulations</li>
+                            <li>Revenue Recovery Agent recovers $1,200+ overnight</li>
+                            <li>AI generates compliant, personalized content</li>
+                        </ul>
+                    </div>
+                </div>
+                <div>
+                    <h3 style="margin-bottom: var(--spacing-4);">David's Story: Enterprise Marketer</h3>
+                    <p style="margin-bottom: var(--spacing-6);">
+                        "We have all the data in the world, but turning it into truly personalized emails for millions of customers is still a huge challenge."
+                    </p>
+                    <div style="background: var(--white); padding: var(--spacing-6); border-radius: var(--radius-lg);">
+                        <h4 style="color: var(--success); margin-bottom: var(--spacing-2);">✅ With EmailForce</h4>
+                        <ul style="color: var(--gray-700);">
+                            <li>Direct CDP integration eliminates engineering dependencies</li>
+                            <li>AI generates 5+ personalized variants per campaign</li>
+                            <li>Launch hyper-personalized campaigns in hours, not weeks</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section style="padding: var(--spacing-16) 0; background: var(--primary-blue); color: white; text-align: center;">
+        <div class="container">
+            <h2 style="font-size: var(--font-size-3xl); margin-bottom: var(--spacing-6); color: white;">
+                Ready to Transform Your Email Marketing?
+            </h2>
+            <p style="font-size: var(--font-size-lg); margin-bottom: var(--spacing-8); opacity: 0.9; max-width: 600px; margin-left: auto; margin-right: auto;">
+                Join forward-thinking marketers who are already using AI to drive unprecedented results.
+            </p>
+            <button class="btn btn-lg" style="background: var(--accent-green); color: white; font-size: var(--font-size-lg);" onclick="showLoginModal()">
+                Start Your Free Trial
+            </button>
+        </div>
+    </section>
+
+        </main>
+
+        <!-- Footer -->
+        <footer style="background: var(--gray-900); color: var(--gray-400); padding: var(--spacing-16) 0 var(--spacing-8);">
+            <div class="container">
+                <div class="grid grid-4" style="gap: var(--spacing-8); margin-bottom: var(--spacing-12);">
+                    <div>
+                        <a href="#" class="logo" style="margin-bottom: var(--spacing-6); display: inline-flex; color: var(--white);">
+                            <div class="logo-icon" style="background: var(--accent-green);" aria-hidden="true">E</div>
+                            EmailForce
+                        </a>
+                        <p style="line-height: 1.7; margin-bottom: var(--spacing-6);">
+                            Intelligent email marketing that works autonomously to drive your revenue growth.
+                        </p>
+                        <div style="display: flex; gap: var(--spacing-4);">
+                            <a href="#" aria-label="Follow us on Twitter" style="color: var(--gray-400); padding: var(--spacing-2); border-radius: var(--radius-md); transition: all var(--transition-fast);">
+                                <span style="font-size: var(--font-size-lg);">🐦</span>
+                            </a>
+                            <a href="#" aria-label="Follow us on LinkedIn" style="color: var(--gray-400); padding: var(--spacing-2); border-radius: var(--radius-md); transition: all var(--transition-fast);">
+                                <span style="font-size: var(--font-size-lg);">💼</span>
+                            </a>
+                            <a href="#" aria-label="Follow us on YouTube" style="color: var(--gray-400); padding: var(--spacing-2); border-radius: var(--radius-md); transition: all var(--transition-fast);">
+                                <span style="font-size: var(--font-size-lg);">📺</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 style="color: var(--white); margin-bottom: var(--spacing-6); font-size: var(--font-size-lg);">Product</h4>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin-bottom: var(--spacing-3);">
+                                <a href="#features" style="color: var(--gray-400); transition: color var(--transition-fast);">Features</a>
+                            </li>
+                            <li style="margin-bottom: var(--spacing-3);">
+                                <a href="#" style="color: var(--gray-400); transition: color var(--transition-fast);">Pricing</a>
+                            </li>
+                            <li style="margin-bottom: var(--spacing-3);">
+                                <a href="integrations.html" style="color: var(--gray-400); transition: color var(--transition-fast);">Integrations</a>
+                            </li>
+                            <li style="margin-bottom: var(--spacing-3);">
+                                <a href="compliance-guard.html" style="color: var(--gray-400); transition: color var(--transition-fast);">Compliance Guard</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 style="color: var(--white); margin-bottom: var(--spacing-6); font-size: var(--font-size-lg);">Company</h4>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin-bottom: var(--spacing-3);">
+                                <a href="#" style="color: var(--gray-400); transition: color var(--transition-fast);">About</a>
+                            </li>
+                            <li style="margin-bottom: var(--spacing-3);">
+                                <a href="#" style="color: var(--gray-400); transition: color var(--transition-fast);">Blog</a>
+                            </li>
+                            <li style="margin-bottom: var(--spacing-3);">
+                                <a href="#" style="color: var(--gray-400); transition: color var(--transition-fast);">Careers</a>
+                            </li>
+                            <li style="margin-bottom: var(--spacing-3);">
+                                <a href="#" style="color: var(--gray-400); transition: color var(--transition-fast);">Press</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 style="color: var(--white); margin-bottom: var(--spacing-6); font-size: var(--font-size-lg);">Support</h4>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin-bottom: var(--spacing-3);">
+                                <a href="#" style="color: var(--gray-400); transition: color var(--transition-fast);">Help Center</a>
+                            </li>
+                            <li style="margin-bottom: var(--spacing-3);">
+                                <a href="#" style="color: var(--gray-400); transition: color var(--transition-fast);">Contact</a>
+                            </li>
+                            <li style="margin-bottom: var(--spacing-3);">
+                                <a href="#" style="color: var(--gray-400); transition: color var(--transition-fast);">Status</a>
+                            </li>
+                            <li style="margin-bottom: var(--spacing-3);">
+                                <a href="#" style="color: var(--gray-400); transition: color var(--transition-fast);">API Docs</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div style="border-top: 1px solid var(--gray-700); padding-top: var(--spacing-8); text-align: center;">
+                    <p style="margin-bottom: var(--spacing-4);">&copy; 2024 EmailForce. All rights reserved.</p>
+                    <div style="display: flex; justify-content: center; gap: var(--spacing-6); flex-wrap: wrap;">
+                        <a href="#" style="color: var(--gray-400); font-size: var(--font-size-sm); transition: color var(--transition-fast);">Privacy Policy</a>
+                        <a href="#" style="color: var(--gray-400); font-size: var(--font-size-sm); transition: color var(--transition-fast);">Terms of Service</a>
+                        <a href="#" style="color: var(--gray-400); font-size: var(--font-size-sm); transition: color var(--transition-fast);">Cookie Policy</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Sign In to EmailForce</h3>
+                <button class="modal-close" onclick="hideLoginModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label class="form-label" for="email">Email Address</label>
+                        <input type="email" id="email" class="form-input" placeholder="Enter your email" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="password">Password</label>
+                        <input type="password" id="password" class="form-input" placeholder="Enter your password" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">
+                            <input type="checkbox" style="margin-right: var(--spacing-2);"> Remember me
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-full">Sign In</button>
+                </form>
+                <div style="text-align: center; margin-top: var(--spacing-6);">
+                    <p>Don't have an account? <a href="#" onclick="showSignupModal()">Sign up for free</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div id="signupModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Create Your EmailForce Account</h3>
+                <button class="modal-close" onclick="hideSignupModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="signupForm">
+                    <div class="form-group">
+                        <label class="form-label" for="signupName">Full Name</label>
+                        <input type="text" id="signupName" class="form-input" placeholder="Enter your full name" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="signupEmail">Email Address</label>
+                        <input type="email" id="signupEmail" class="form-input" placeholder="Enter your email" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="signupPassword">Password</label>
+                        <input type="password" id="signupPassword" class="form-input" placeholder="Create a password" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="company">Company Name</label>
+                        <input type="text" id="company" class="form-input" placeholder="Enter your company name" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-full">Create Account</button>
+                </form>
+                <div style="text-align: center; margin-top: var(--spacing-6);">
+                    <p>Already have an account? <a href="#" onclick="showLoginModal()">Sign in</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Enhanced JavaScript with accessibility and mobile support
+        
+        // Mobile menu functionality
+        function toggleMobileMenu() {
+            const nav = document.querySelector('.nav');
+            const toggle = document.querySelector('.mobile-menu-toggle');
+            const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+            
+            if (isExpanded) {
+                nav.classList.remove('show');
+                toggle.classList.remove('active');
+                toggle.setAttribute('aria-expanded', 'false');
+                document.body.style.overflow = '';
+            } else {
+                nav.classList.add('show');
+                toggle.classList.add('active');
+                toggle.setAttribute('aria-expanded', 'true');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                const nav = document.querySelector('.nav');
+                const toggle = document.querySelector('.mobile-menu-toggle');
+                nav.classList.remove('show');
+                toggle.classList.remove('active');
+                toggle.setAttribute('aria-expanded', 'false');
+                document.body.style.overflow = '';
+            });
+        });
+
+        // Modal functions with enhanced accessibility
+        function showLoginModal() {
+            const modal = document.getElementById('loginModal');
+            modal.classList.add('show');
+            hideSignupModal();
+            
+            // Focus management
+            const firstInput = modal.querySelector('input');
+            if (firstInput) {
+                setTimeout(() => firstInput.focus(), 100);
+            }
+            
+            // Trap focus within modal
+            trapFocus(modal);
+        }
+
+        function hideLoginModal() {
+            document.getElementById('loginModal').classList.remove('show');
+            document.querySelector('.mobile-menu-toggle').focus();
+        }
+
+        function showSignupModal() {
+            const modal = document.getElementById('signupModal');
+            modal.classList.add('show');
+            hideLoginModal();
+            
+            // Focus management
+            const firstInput = modal.querySelector('input');
+            if (firstInput) {
+                setTimeout(() => firstInput.focus(), 100);
+            }
+            
+            // Trap focus within modal
+            trapFocus(modal);
+        }
+
+        function hideSignupModal() {
+            document.getElementById('signupModal').classList.remove('show');
+            document.querySelector('.mobile-menu-toggle').focus();
+        }
+
+        // Focus trap for modals
+        function trapFocus(element) {
+            const focusableElements = element.querySelectorAll(
+                'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+            );
+            const firstElement = focusableElements[0];
+            const lastElement = focusableElements[focusableElements.length - 1];
+
+            element.addEventListener('keydown', function(e) {
+                if (e.key === 'Tab') {
+                    if (e.shiftKey) {
+                        if (document.activeElement === firstElement) {
+                            e.preventDefault();
+                            lastElement.focus();
+                        }
+                    } else {
+                        if (document.activeElement === lastElement) {
+                            e.preventDefault();
+                            firstElement.focus();
+                        }
+                    }
+                }
+                if (e.key === 'Escape') {
+                    hideLoginModal();
+                    hideSignupModal();
+                }
+            });
+        }
+
+        // Enhanced form submissions with loading states
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            
+            // Show loading state
+            submitBtn.classList.add('loading');
+            submitBtn.textContent = 'Signing in...';
+            submitBtn.disabled = true;
+            
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            
+            // Simulate login with delay
+            setTimeout(() => {
+                if (email && password) {
+                    window.location.href = 'dashboard.html';
+                } else {
+                    // Reset button state
+                    submitBtn.classList.remove('loading');
+                    submitBtn.textContent = originalText;
+                    submitBtn.disabled = false;
+                }
+            }, 1500);
+        });
+
+        document.getElementById('signupForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            
+            // Show loading state
+            submitBtn.classList.add('loading');
+            submitBtn.textContent = 'Creating account...';
+            submitBtn.disabled = true;
+            
+            const name = document.getElementById('signupName').value;
+            const email = document.getElementById('signupEmail').value;
+            const password = document.getElementById('signupPassword').value;
+            const company = document.getElementById('company').value;
+            
+            // Simulate signup with delay
+            setTimeout(() => {
+                if (name && email && password && company) {
+                    window.location.href = 'dashboard.html';
+                } else {
+                    // Reset button state
+                    submitBtn.classList.remove('loading');
+                    submitBtn.textContent = originalText;
+                    submitBtn.disabled = false;
+                }
+            }, 1500);
+        });
+
+        // Close modals when clicking outside
+        window.addEventListener('click', function(e) {
+            if (e.target.classList.contains('modal')) {
+                e.target.classList.remove('show');
+            }
+        });
+
+        // Enhanced smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerHeight = document.querySelector('.header').offsetHeight;
+                    const targetPosition = target.offsetTop - headerHeight - 20;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe cards for animation
+        document.querySelectorAll('.card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+
+        // Keyboard navigation support
+        document.addEventListener('keydown', function(e) {
+            // Close mobile menu with Escape key
+            if (e.key === 'Escape') {
+                const nav = document.querySelector('.nav');
+                if (nav.classList.contains('show')) {
+                    toggleMobileMenu();
+                }
+            }
+        });
+
+        // Add hover effects for cards
+        document.querySelectorAll('.card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-8px)';
+                this.style.boxShadow = 'var(--shadow-xl)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = 'var(--shadow-md)';
+            });
+        });
+
+        // Initialize tooltips and other interactive elements
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add loading animation to buttons
+            document.querySelectorAll('.btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    if (!this.classList.contains('loading') && !this.disabled) {
+                        this.style.transform = 'scale(0.98)';
+                        setTimeout(() => {
+                            this.style.transform = '';
+                        }, 150);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html> 

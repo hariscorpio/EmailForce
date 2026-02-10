@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automations - EmailForce</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container-fluid">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon">E</div>
+                    EmailForce
+                </div>
+                <nav class="nav">
+                    <a href="dashboard.html" class="nav-link">Dashboard</a>
+                    <a href="campaigns.html" class="nav-link">Campaigns</a>
+                    <a href="automations.html" class="nav-link active">Automations</a>
+                    <a href="analytics.html" class="nav-link">Analytics</a>
+                </nav>
+                <div class="user-menu">
+                    <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+                    <div class="user-avatar">M</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <nav class="sidebar-nav">
+            <div class="sidebar-section">
+                <div class="sidebar-title">Overview</div>
+                <a href="dashboard.html" class="sidebar-link">
+                    <span class="sidebar-icon">📊</span>
+                    Dashboard
+                </a>
+                <a href="analytics.html" class="sidebar-link">
+                    <span class="sidebar-icon">📈</span>
+                    Analytics
+                </a>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="sidebar-title">Campaigns</div>
+                <a href="campaigns.html" class="sidebar-link">
+                    <span class="sidebar-icon">📧</span>
+                    Campaign Builder
+                </a>
+                <a href="campaigns.html#templates" class="sidebar-link">
+                    <span class="sidebar-icon">📋</span>
+                    Templates
+                </a>
+                <a href="campaigns.html#drafts" class="sidebar-link">
+                    <span class="sidebar-icon">📝</span>
+                    Drafts
+                </a>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="sidebar-title">Automations</div>
+                <a href="automations.html" class="sidebar-link active">
+                    <span class="sidebar-icon">🤖</span>
+                    AI Agents
+                </a>
+                <a href="automations.html#recovery" class="sidebar-link">
+                    <span class="sidebar-icon">💰</span>
+                    Revenue Recovery
+                </a>
+                <a href="automations.html#workflows" class="sidebar-link">
+                    <span class="sidebar-icon">⚡</span>
+                    Workflows
+                </a>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="sidebar-title">Compliance</div>
+                <a href="compliance-guard.html" class="sidebar-link">
+                    <span class="sidebar-icon">🛡️</span>
+                    Compliance Guard
+                </a>
+                <a href="compliance-guard.html#consent" class="sidebar-link">
+                    <span class="sidebar-icon">✅</span>
+                    Consent Management
+                </a>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="sidebar-title">Settings</div>
+                <a href="integrations.html" class="sidebar-link">
+                    <span class="sidebar-icon">🔗</span>
+                    Integrations
+                </a>
+                <a href="#" class="sidebar-link">
+                    <span class="sidebar-icon">👥</span>
+                    Team
+                </a>
+                <a href="#" class="sidebar-link">
+                    <span class="sidebar-icon">⚙️</span>
+                    Settings
+                </a>
+            </div>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Page Header -->
+        <div class="page-header">
+            <h1 class="page-title">AI Agents & Automations</h1>
+            <p class="page-subtitle">Let our AI agents work autonomously to optimize your email marketing and recover lost revenue.</p>
+        </div>
+
+        <!-- AI Agents Overview -->
+        <div class="ai-agent">
+            <div class="ai-status">
+                <div class="ai-status-indicator"></div>
+                <span>2 AI Agents are actively working</span>
+            </div>
+            <h3>Your AI agents are driving results</h3>
+            <p>Revenue Recovery Agent has recovered $1,247 in the last 24 hours. Content Optimization Agent has improved open rates by 15.3% through autonomous A/B testing.</p>
+        </div>
+
+        <!-- AI Agents Grid -->
+        <div class="grid grid-3" style="gap: var(--spacing-6); margin-bottom: var(--spacing-8);">
+            <!-- Revenue Recovery Agent -->
+            <div class="card">
+                <div class="card-header">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <h3 class="card-title">💰 Revenue Recovery Agent</h3>
+                        <label class="toggle">
+                            <input type="checkbox" checked>
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <p style="margin-bottom: var(--spacing-4);">Automatically recovers abandoned carts by sending personalized emails with AI-optimized offers and timing.</p>
+                    <div style="margin-bottom: var(--spacing-4);">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: var(--spacing-2);">
+                            <span>Today's Recovery</span>
+                            <span style="font-weight: 600; color: var(--success);">$1,247</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; margin-bottom: var(--spacing-2);">
+                            <span>Emails Sent</span>
+                            <span>156</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between;">
+                            <span>Conversion Rate</span>
+                            <span>12.4%</span>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary w-full" onclick="showRecoverySettings()">Configure</button>
+                </div>
+            </div>
+
+            <!-- Content Optimization Agent -->
+            <div class="card">
+                <div class="card-header">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <h3 class="card-title">🎨 Content Optimization Agent</h3>
+                        <label class="toggle">
+                            <input type="checkbox" checked>
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <p style="margin-bottom: var(--spacing-4);">Continuously A/B tests subject lines, content, and send times to maximize engagement and conversions.</p>
+                    <div style="margin-bottom: var(--spacing-4);">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: var(--spacing-2);">
+                            <span>Open Rate Improvement</span>
+                            <span style="font-weight: 600; color: var(--success);">+15.3%</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; margin-bottom: var(--spacing-2);">
+                            <span>Active Tests</span>
+                            <span>8</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between;">
+                            <span>Tests Completed</span>
+                            <span>24</span>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary w-full" onclick="showOptimizationSettings()">Configure</button>
+                </div>
+            </div>
+
+            <!-- Personalization Agent -->
+            <div class="card">
+                <div class="card-header">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <h3 class="card-title">👤 Personalization Agent</h3>
+                        <label class="toggle">
+                            <input type="checkbox">
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <p style="margin-bottom: var(--spacing-4);">Creates hyper-personalized content based on customer behavior, preferences, and purchase history.</p>
+                    <div style="margin-bottom: var(--spacing-4);">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: var(--spacing-2);">
+                            <span>Personalization Score</span>
+                            <span style="font-weight: 600; color: var(--warning);">Not Active</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; margin-bottom: var(--spacing-2);">
+                            <span>Segments Available</span>
+                            <span>12</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between;">
+                            <span>Data Sources</span>
+                            <span>3</span>
+                        </div>
+                    </div>
+                    <button class="btn btn-secondary w-full" onclick="showPersonalizationSettings()">Activate</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Revenue Recovery Agent Details -->
+        <div id="recovery" class="card mb-8">
+            <div class="card-header">
+                <h3 class="card-title">Revenue Recovery Agent - Detailed View</h3>
+                <button class="btn btn-primary" onclick="showRecoverySettings()">Settings</button>
+            </div>
+            <div class="card-body">
+                <div class="grid grid-2" style="gap: var(--spacing-6);">
+                    <!-- Performance Metrics -->
+                    <div>
+                        <h4 style="margin-bottom: var(--spacing-4);">Performance Metrics</h4>
+                        <div style="margin-bottom: var(--spacing-4);">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: var(--spacing-2);">
+                                <span>Total Revenue Recovered</span>
+                                <span style="font-weight: 600; color: var(--success);">$12,847</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: var(--spacing-2);">
+                                <span>This Month</span>
+                                <span style="font-weight: 600;">$3,247</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: var(--spacing-2);">
+                                <span>Last Month</span>
+                                <span>$2,891</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between;">
+                                <span>Growth</span>
+                                <span style="color: var(--success);">+12.3%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- AI Learning Insights -->
+                    <div>
+                        <h4 style="margin-bottom: var(--spacing-4);">AI Learning Insights</h4>
+                        <div style="background: var(--gray-50); padding: var(--spacing-4); border-radius: var(--radius-md);">
+                            <p style="margin-bottom: var(--spacing-3);"><strong>Recent Discoveries:</strong></p>
+                            <ul style="color: var(--gray-700); font-size: var(--font-size-sm);">
+                                <li>10% discount performs better than 15% for carts under $50</li>
+                                <li>Sending within 1 hour increases conversion by 23%</li>
+                                <li>Personalized product images boost click rates by 18%</li>
+                                <li>Free shipping offer works best for carts $75+</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Activity -->
+                <div style="margin-top: var(--spacing-6);">
+                    <h4 style="margin-bottom: var(--spacing-4);">Recent Recovery Activity</h4>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Time</th>
+                                <th>Customer</th>
+                                <th>Abandoned Items</th>
+                                <th>Offer Sent</th>
+                                <th>Result</th>
+                                <th>Revenue</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>2 min ago</td>
+                                <td>john.doe@example.com</td>
+                                <td>Nike Air Max Shoes</td>
+                                <td>10% off + Free Shipping</td>
+                                <td><span class="badge badge-success">Converted</span></td>
+                                <td>$89</td>
+                            </tr>
+                            <tr>
+                                <td>15 min ago</td>
+                                <td>sarah.smith@example.com</td>
+                                <td>Adidas T-Shirt</td>
+                                <td>15% off</td>
+                                <td><span class="badge badge-warning">Pending</span></td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td>1 hour ago</td>
+                                <td>mike.wilson@example.com</td>
+                                <td>Puma Sneakers</td>
+                                <td>Free Shipping</td>
+                                <td><span class="badge badge-success">Converted</span></td>
+                                <td>$67</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Workflow Automations -->
+        <div id="workflows" class="card">
+            <div class="card-header">
+                <h3 class="card-title">Workflow Automations</h3>
+                <button class="btn btn-primary" onclick="showWorkflowModal()">Create Workflow</button>
+            </div>
+            <div class="card-body">
+                <div class="grid grid-2" style="gap: var(--spacing-6);">
+                    <!-- Welcome Series -->
+                    <div class="card">
+                        <div class="card-header">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <h4 style="margin-bottom: 0;">Welcome Series</h4>
+                                <label class="toggle">
+                                    <input type="checkbox" checked>
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <p style="margin-bottom: var(--spacing-3);">3-email welcome series for new subscribers</p>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: var(--spacing-2);">
+                                <span>Active Subscribers</span>
+                                <span>1,247</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: var(--spacing-2);">
+                                <span>Avg. Open Rate</span>
+                                <span>34.2%</span>
+                            </div>
+                            <button class="btn btn-sm btn-secondary w-full">Edit</button>
+                        </div>
+                    </div>
+
+                    <!-- Re-engagement Campaign -->
+                    <div class="card">
+                        <div class="card-header">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <h4 style="margin-bottom: 0;">Re-engagement</h4>
+                                <label class="toggle">
+                                    <input type="checkbox" checked>
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <p style="margin-bottom: var(--spacing-3);">Re-engage inactive subscribers</p>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: var(--spacing-2);">
+                                <span>Inactive Subscribers</span>
+                                <span>456</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: var(--spacing-2);">
+                                <span>Re-engaged</span>
+                                <span>23</span>
+                            </div>
+                            <button class="btn btn-sm btn-secondary w-full">Edit</button>
+                        </div>
+                    </div>
+
+                    <!-- Birthday Campaign -->
+                    <div class="card">
+                        <div class="card-header">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <h4 style="margin-bottom: 0;">Birthday Campaign</h4>
+                                <label class="toggle">
+                                    <input type="checkbox">
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <p style="margin-bottom: var(--spacing-3);">Special offers for customer birthdays</p>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: var(--spacing-2);">
+                                <span>Birthdays This Month</span>
+                                <span>89</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: var(--spacing-2);">
+                                <span>Status</span>
+                                <span style="color: var(--gray-500);">Inactive</span>
+                            </div>
+                            <button class="btn btn-sm btn-secondary w-full">Activate</button>
+                        </div>
+                    </div>
+
+                    <!-- Post-Purchase Follow-up -->
+                    <div class="card">
+                        <div class="card-header">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <h4 style="margin-bottom: 0;">Post-Purchase</h4>
+                                <label class="toggle">
+                                    <input type="checkbox" checked>
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <p style="margin-bottom: var(--spacing-3);">Follow-up emails after purchase</p>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: var(--spacing-2);">
+                                <span>Recent Purchases</span>
+                                <span>234</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: var(--spacing-2);">
+                                <span>Reviews Generated</span>
+                                <span>45</span>
+                            </div>
+                            <button class="btn btn-sm btn-secondary w-full">Edit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Recovery Settings Modal -->
+    <div id="recoverySettingsModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Revenue Recovery Agent Settings</h3>
+                <button class="modal-close" onclick="hideRecoverySettings()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="recoverySettingsForm">
+                    <div class="form-group">
+                        <label class="form-label">Trigger Delay</label>
+                        <select class="form-select">
+                            <option value="15">15 minutes</option>
+                            <option value="30">30 minutes</option>
+                            <option value="60" selected>1 hour</option>
+                            <option value="120">2 hours</option>
+                            <option value="240">4 hours</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Maximum Emails</label>
+                        <select class="form-select">
+                            <option value="1">1 email</option>
+                            <option value="2" selected>2 emails</option>
+                            <option value="3">3 emails</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Minimum Cart Value</label>
+                        <input type="number" class="form-input" value="25" min="0" step="5">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Offer Strategy</label>
+                        <select class="form-select">
+                            <option value="auto" selected>AI Optimized</option>
+                            <option value="percentage">Percentage Discount</option>
+                            <option value="fixed">Fixed Amount Off</option>
+                            <option value="shipping">Free Shipping</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Personalization Level</label>
+                        <select class="form-select">
+                            <option value="basic">Basic (Product name only)</option>
+                            <option value="standard" selected>Standard (Product + price)</option>
+                            <option value="advanced">Advanced (Product + price + image)</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="hideRecoverySettings()">Cancel</button>
+                <button class="btn btn-primary" onclick="saveRecoverySettings()">Save Settings</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Workflow Modal -->
+    <div id="workflowModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Create New Workflow</h3>
+                <button class="modal-close" onclick="hideWorkflowModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="workflowForm">
+                    <div class="form-group">
+                        <label class="form-label" for="workflowName">Workflow Name</label>
+                        <input type="text" id="workflowName" class="form-input" placeholder="e.g., Welcome Series" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="workflowTrigger">Trigger</label>
+                        <select id="workflowTrigger" class="form-select" required>
+                            <option value="">Select trigger</option>
+                            <option value="signup">New subscriber signup</option>
+                            <option value="purchase">First purchase</option>
+                            <option value="abandoned">Cart abandoned</option>
+                            <option value="inactive">Subscriber inactive</option>
+                            <option value="birthday">Customer birthday</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="workflowEmails">Number of Emails</label>
+                        <select id="workflowEmails" class="form-select" required>
+                            <option value="1">1 email</option>
+                            <option value="2">2 emails</option>
+                            <option value="3" selected>3 emails</option>
+                            <option value="5">5 emails</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="workflowDelay">Delay Between Emails</label>
+                        <select id="workflowDelay" class="form-select" required>
+                            <option value="1">1 day</option>
+                            <option value="2">2 days</option>
+                            <option value="3" selected>3 days</option>
+                            <option value="7">1 week</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="hideWorkflowModal()">Cancel</button>
+                <button class="btn btn-primary" onclick="saveWorkflow()">Create Workflow</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Theme toggle functionality
+        function toggleTheme() {
+            const body = document.body;
+            const themeToggle = document.querySelector('.theme-toggle');
+            
+            if (body.getAttribute('data-theme') === 'dark') {
+                body.removeAttribute('data-theme');
+                themeToggle.textContent = '🌙';
+            } else {
+                body.setAttribute('data-theme', 'dark');
+                themeToggle.textContent = '☀️';
+            }
+        }
+
+        // Check for saved theme preference
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            document.body.setAttribute('data-theme', savedTheme);
+            const themeToggle = document.querySelector('.theme-toggle');
+            themeToggle.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+        }
+
+        // Save theme preference
+        document.querySelector('.theme-toggle').addEventListener('click', function() {
+            const currentTheme = document.body.getAttribute('data-theme');
+            localStorage.setItem('theme', currentTheme === 'dark' ? '' : 'dark');
+        });
+
+        // Modal functions
+        function showRecoverySettings() {
+            document.getElementById('recoverySettingsModal').classList.add('show');
+        }
+
+        function hideRecoverySettings() {
+            document.getElementById('recoverySettingsModal').classList.remove('show');
+        }
+
+        function showOptimizationSettings() {
+            alert('Content Optimization Agent settings will be available in the next update.');
+        }
+
+        function showPersonalizationSettings() {
+            alert('Personalization Agent activation requires CDP integration. Please visit the Integrations page.');
+        }
+
+        function showWorkflowModal() {
+            document.getElementById('workflowModal').classList.add('show');
+        }
+
+        function hideWorkflowModal() {
+            document.getElementById('workflowModal').classList.remove('show');
+        }
+
+        function saveRecoverySettings() {
+            alert('Revenue Recovery Agent settings saved successfully!');
+            hideRecoverySettings();
+        }
+
+        function saveWorkflow() {
+            const workflowName = document.getElementById('workflowName').value;
+            const workflowTrigger = document.getElementById('workflowTrigger').value;
+            const workflowEmails = document.getElementById('workflowEmails').value;
+            const workflowDelay = document.getElementById('workflowDelay').value;
+
+            if (workflowName && workflowTrigger && workflowEmails && workflowDelay) {
+                alert('Workflow created successfully!');
+                hideWorkflowModal();
+                document.getElementById('workflowForm').reset();
+            } else {
+                alert('Please fill in all required fields.');
+            }
+        }
+
+        // Close modals when clicking outside
+        window.addEventListener('click', function(e) {
+            if (e.target.classList.contains('modal')) {
+                e.target.classList.remove('show');
+            }
+        });
+
+        // Toggle AI agents
+        document.querySelectorAll('.toggle input').forEach(toggle => {
+            toggle.addEventListener('change', function() {
+                const card = this.closest('.card');
+                const button = card.querySelector('.btn');
+                
+                if (this.checked) {
+                    button.textContent = 'Configure';
+                    button.className = 'btn btn-primary w-full';
+                } else {
+                    button.textContent = 'Activate';
+                    button.className = 'btn btn-secondary w-full';
+                }
+            });
+        });
+    </script>
+</body>
+</html> 

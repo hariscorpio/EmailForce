@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compliance Guard - EmailForce</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container-fluid">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon">E</div>
+                    EmailForce
+                </div>
+                <nav class="nav">
+                    <a href="dashboard.html" class="nav-link">Dashboard</a>
+                    <a href="campaigns.html" class="nav-link">Campaigns</a>
+                    <a href="automations.html" class="nav-link">Automations</a>
+                    <a href="analytics.html" class="nav-link">Analytics</a>
+                </nav>
+                <div class="user-menu">
+                    <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+                    <div class="user-avatar">M</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <nav class="sidebar-nav">
+            <div class="sidebar-section">
+                <div class="sidebar-title">Overview</div>
+                <a href="dashboard.html" class="sidebar-link">
+                    <span class="sidebar-icon">📊</span>
+                    Dashboard
+                </a>
+                <a href="analytics.html" class="sidebar-link">
+                    <span class="sidebar-icon">📈</span>
+                    Analytics
+                </a>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="sidebar-title">Campaigns</div>
+                <a href="campaigns.html" class="sidebar-link">
+                    <span class="sidebar-icon">📧</span>
+                    Campaign Builder
+                </a>
+                <a href="campaigns.html#templates" class="sidebar-link">
+                    <span class="sidebar-icon">📋</span>
+                    Templates
+                </a>
+                <a href="campaigns.html#drafts" class="sidebar-link">
+                    <span class="sidebar-icon">📝</span>
+                    Drafts
+                </a>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="sidebar-title">Automations</div>
+                <a href="automations.html" class="sidebar-link">
+                    <span class="sidebar-icon">🤖</span>
+                    AI Agents
+                </a>
+                <a href="automations.html#recovery" class="sidebar-link">
+                    <span class="sidebar-icon">💰</span>
+                    Revenue Recovery
+                </a>
+                <a href="automations.html#workflows" class="sidebar-link">
+                    <span class="sidebar-icon">⚡</span>
+                    Workflows
+                </a>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="sidebar-title">Compliance</div>
+                <a href="compliance-guard.html" class="sidebar-link active">
+                    <span class="sidebar-icon">🛡️</span>
+                    Compliance Guard
+                </a>
+                <a href="compliance-guard.html#consent" class="sidebar-link">
+                    <span class="sidebar-icon">✅</span>
+                    Consent Management
+                </a>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="sidebar-title">Settings</div>
+                <a href="integrations.html" class="sidebar-link">
+                    <span class="sidebar-icon">🔗</span>
+                    Integrations
+                </a>
+                <a href="#" class="sidebar-link">
+                    <span class="sidebar-icon">👥</span>
+                    Team
+                </a>
+                <a href="#" class="sidebar-link">
+                    <span class="sidebar-icon">⚙️</span>
+                    Settings
+                </a>
+            </div>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Page Header -->
+        <div class="page-header">
+            <h1 class="page-title">Compliance Guard</h1>
+            <p class="page-subtitle">Automatically enforce GDPR, CCPA, and regional regulations across all your email campaigns.</p>
+        </div>
+
+        <!-- Compliance Status -->
+        <div class="ai-agent">
+            <div class="ai-status">
+                <div class="ai-status-indicator"></div>
+                <span>Compliance Guard is active and monitoring</span>
+            </div>
+            <h3>Your emails are 100% compliant</h3>
+            <p>Compliance Guard has processed 2,341 emails in the last 24 hours with zero compliance violations. All regional regulations are being automatically enforced.</p>
+        </div>
+
+        <!-- Compliance Rules -->
+        <div class="card mb-8">
+            <div class="card-header">
+                <h3 class="card-title">Active Compliance Rules</h3>
+                <button class="btn btn-primary" onclick="showAddRuleModal()">Add New Rule</button>
+            </div>
+            <div class="card-body">
+                <div class="compliance-rule active">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--spacing-3);">
+                        <h4 style="margin-bottom: 0;">GDPR Compliance</h4>
+                        <div style="display: flex; align-items: center; gap: var(--spacing-3);">
+                            <span class="badge badge-success">Active</span>
+                            <label class="toggle">
+                                <input type="checkbox" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <p style="margin-bottom: var(--spacing-3);">Automatically include GDPR-compliant consent language and unsubscribe links for EU recipients.</p>
+                    <div class="region-selector">
+                        <span class="region-tag">European Union</span>
+                        <span class="region-tag">United Kingdom</span>
+                        <span class="region-tag">Norway</span>
+                        <span class="region-tag">Switzerland</span>
+                    </div>
+                </div>
+
+                <div class="compliance-rule active">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--spacing-3);">
+                        <h4 style="margin-bottom: 0;">CCPA Compliance</h4>
+                        <div style="display: flex; align-items: center; gap: var(--spacing-3);">
+                            <span class="badge badge-success">Active</span>
+                            <label class="toggle">
+                                <input type="checkbox" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <p style="margin-bottom: var(--spacing-3);">Include California Consumer Privacy Act disclosures and opt-out mechanisms for California residents.</p>
+                    <div class="region-selector">
+                        <span class="region-tag">California</span>
+                        <span class="region-tag">United States</span>
+                    </div>
+                </div>
+
+                <div class="compliance-rule active">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--spacing-3);">
+                        <h4 style="margin-bottom: 0;">CAN-SPAM Compliance</h4>
+                        <div style="display: flex; align-items: center; gap: var(--spacing-3);">
+                            <span class="badge badge-success">Active</span>
+                            <label class="toggle">
+                                <input type="checkbox" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <p style="margin-bottom: var(--spacing-3);">Ensure all emails include proper sender identification and unsubscribe mechanisms as required by CAN-SPAM.</p>
+                    <div class="region-selector">
+                        <span class="region-tag">United States</span>
+                    </div>
+                </div>
+
+                <div class="compliance-rule inactive">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--spacing-3);">
+                        <h4 style="margin-bottom: 0;">CASL Compliance</h4>
+                        <div style="display: flex; align-items: center; gap: var(--spacing-3);">
+                            <span class="badge badge-warning">Inactive</span>
+                            <label class="toggle">
+                                <input type="checkbox">
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <p style="margin-bottom: var(--spacing-3);">Canada's Anti-Spam Legislation compliance for Canadian recipients.</p>
+                    <div class="region-selector">
+                        <span class="region-tag">Canada</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Consent Management -->
+        <div class="grid grid-2" style="gap: var(--spacing-8);">
+            <!-- Consent Overview -->
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Consent Overview</h3>
+                </div>
+                <div class="card-body">
+                    <div style="margin-bottom: var(--spacing-6);">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--spacing-2);">
+                            <span>Marketing Emails</span>
+                            <span style="font-weight: 600;">89.2%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 89.2%;"></div>
+                        </div>
+                    </div>
+                    <div style="margin-bottom: var(--spacing-6);">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--spacing-2);">
+                            <span>Transactional Emails</span>
+                            <span style="font-weight: 600;">95.7%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 95.7%;"></div>
+                        </div>
+                    </div>
+                    <div style="margin-bottom: var(--spacing-6);">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--spacing-2);">
+                            <span>Newsletter</span>
+                            <span style="font-weight: 600;">76.4%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 76.4%;"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--spacing-2);">
+                            <span>Promotional</span>
+                            <span style="font-weight: 600;">82.1%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 82.1%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Compliance Activity -->
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Recent Compliance Activity</h3>
+                </div>
+                <div class="card-body">
+                    <div style="margin-bottom: var(--spacing-4);">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--spacing-2);">
+                            <span style="font-weight: 500;">GDPR Check</span>
+                            <span style="color: var(--success); font-size: var(--font-size-sm);">2 min ago</span>
+                        </div>
+                        <p style="color: var(--gray-600); font-size: var(--font-size-sm);">156 emails processed - All compliant</p>
+                    </div>
+                    <div style="margin-bottom: var(--spacing-4);">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--spacing-2);">
+                            <span style="font-weight: 500;">CCPA Update</span>
+                            <span style="color: var(--success); font-size: var(--font-size-sm);">15 min ago</span>
+                        </div>
+                        <p style="color: var(--gray-600); font-size: var(--font-size-sm);">Updated California resident disclosures</p>
+                    </div>
+                    <div style="margin-bottom: var(--spacing-4);">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--spacing-2);">
+                            <span style="font-weight: 500;">Consent Audit</span>
+                            <span style="color: var(--success); font-size: var(--font-size-sm);">1 hour ago</span>
+                        </div>
+                        <p style="color: var(--gray-600); font-size: var(--font-size-sm);">Monthly consent verification completed</p>
+                    </div>
+                    <div style="margin-bottom: var(--spacing-4);">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--spacing-2);">
+                            <span style="font-weight: 500;">Unsubscribe Processed</span>
+                            <span style="color: var(--success); font-size: var(--font-size-sm);">2 hours ago</span>
+                        </div>
+                        <p style="color: var(--gray-600); font-size: var(--font-size-sm);">23 unsubscribe requests processed</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Consent Management Table -->
+        <div class="card mt-8">
+            <div class="card-header">
+                <h3 class="card-title">Consent Management</h3>
+                <button class="btn btn-secondary" onclick="exportConsentData()">Export Data</button>
+            </div>
+            <div class="card-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Email Address</th>
+                            <th>Consent Type</th>
+                            <th>Consent Date</th>
+                            <th>Source</th>
+                            <th>Status</th>
+                            <th>Region</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>john.doe@example.com</td>
+                            <td>Marketing</td>
+                            <td>2024-01-15</td>
+                            <td>Website Signup</td>
+                            <td><span class="badge badge-success">Active</span></td>
+                            <td>EU (Germany)</td>
+                            <td>
+                                <button class="btn btn-sm btn-secondary">View</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>sarah.smith@example.com</td>
+                            <td>Transactional</td>
+                            <td>2024-01-14</td>
+                            <td>Purchase</td>
+                            <td><span class="badge badge-success">Active</span></td>
+                            <td>US (California)</td>
+                            <td>
+                                <button class="btn btn-sm btn-secondary">View</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>mike.wilson@example.com</td>
+                            <td>Newsletter</td>
+                            <td>2024-01-13</td>
+                            <td>Email Campaign</td>
+                            <td><span class="badge badge-warning">Pending</span></td>
+                            <td>US (New York)</td>
+                            <td>
+                                <button class="btn btn-sm btn-primary">Verify</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>emma.brown@example.com</td>
+                            <td>Promotional</td>
+                            <td>2024-01-12</td>
+                            <td>Website Signup</td>
+                            <td><span class="badge badge-error">Revoked</span></td>
+                            <td>EU (France)</td>
+                            <td>
+                                <button class="btn btn-sm btn-secondary">View</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <!-- Add Rule Modal -->
+    <div id="addRuleModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Add Compliance Rule</h3>
+                <button class="modal-close" onclick="hideAddRuleModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="addRuleForm">
+                    <div class="form-group">
+                        <label class="form-label" for="ruleName">Rule Name</label>
+                        <input type="text" id="ruleName" class="form-input" placeholder="e.g., GDPR Compliance" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="ruleType">Compliance Type</label>
+                        <select id="ruleType" class="form-select" required>
+                            <option value="">Select compliance type</option>
+                            <option value="gdpr">GDPR (European Union)</option>
+                            <option value="ccpa">CCPA (California)</option>
+                            <option value="can-spam">CAN-SPAM (United States)</option>
+                            <option value="casl">CASL (Canada)</option>
+                            <option value="custom">Custom Rule</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="regions">Applicable Regions</label>
+                        <select id="regions" class="form-select" multiple required>
+                            <option value="eu">European Union</option>
+                            <option value="uk">United Kingdom</option>
+                            <option value="us">United States</option>
+                            <option value="ca">Canada</option>
+                            <option value="au">Australia</option>
+                            <option value="jp">Japan</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="ruleDescription">Description</label>
+                        <textarea id="ruleDescription" class="form-textarea" placeholder="Describe what this compliance rule does..."></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="hideAddRuleModal()">Cancel</button>
+                <button class="btn btn-primary" onclick="saveComplianceRule()">Save Rule</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Theme toggle functionality
+        function toggleTheme() {
+            const body = document.body;
+            const themeToggle = document.querySelector('.theme-toggle');
+            
+            if (body.getAttribute('data-theme') === 'dark') {
+                body.removeAttribute('data-theme');
+                themeToggle.textContent = '🌙';
+            } else {
+                body.setAttribute('data-theme', 'dark');
+                themeToggle.textContent = '☀️';
+            }
+        }
+
+        // Check for saved theme preference
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            document.body.setAttribute('data-theme', savedTheme);
+            const themeToggle = document.querySelector('.theme-toggle');
+            themeToggle.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+        }
+
+        // Save theme preference
+        document.querySelector('.theme-toggle').addEventListener('click', function() {
+            const currentTheme = document.body.getAttribute('data-theme');
+            localStorage.setItem('theme', currentTheme === 'dark' ? '' : 'dark');
+        });
+
+        // Modal functions
+        function showAddRuleModal() {
+            document.getElementById('addRuleModal').classList.add('show');
+        }
+
+        function hideAddRuleModal() {
+            document.getElementById('addRuleModal').classList.remove('show');
+        }
+
+        function saveComplianceRule() {
+            const ruleName = document.getElementById('ruleName').value;
+            const ruleType = document.getElementById('ruleType').value;
+            const regions = Array.from(document.getElementById('regions').selectedOptions).map(option => option.value);
+            const description = document.getElementById('ruleDescription').value;
+
+            if (ruleName && ruleType && regions.length > 0) {
+                // Simulate saving the rule
+                alert('Compliance rule saved successfully!');
+                hideAddRuleModal();
+                document.getElementById('addRuleForm').reset();
+            } else {
+                alert('Please fill in all required fields.');
+            }
+        }
+
+        function exportConsentData() {
+            // Simulate exporting consent data
+            alert('Consent data export started. You will receive an email when it\'s ready.');
+        }
+
+        // Close modals when clicking outside
+        window.addEventListener('click', function(e) {
+            if (e.target.classList.contains('modal')) {
+                e.target.classList.remove('show');
+            }
+        });
+
+        // Toggle compliance rules
+        document.querySelectorAll('.toggle input').forEach(toggle => {
+            toggle.addEventListener('change', function() {
+                const rule = this.closest('.compliance-rule');
+                const badge = rule.querySelector('.badge');
+                
+                if (this.checked) {
+                    rule.classList.remove('inactive');
+                    rule.classList.add('active');
+                    badge.textContent = 'Active';
+                    badge.className = 'badge badge-success';
+                } else {
+                    rule.classList.remove('active');
+                    rule.classList.add('inactive');
+                    badge.textContent = 'Inactive';
+                    badge.className = 'badge badge-warning';
+                }
+            });
+        });
+    </script>
+</body>
+</html> 
