@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Concept Explainer: From Automation to Autonomy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --brand-blue: #4f46e5;
+            --brand-light-blue: #e0e7ff;
+            --brand-dark-blue: #3730a3;
+            --text-main: #1f2937;
+            --text-light: #6b7280;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f9fafb;
+            color: var(--text-main);
+        }
+        .section {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            transition: opacity 0.5s ease-in-out;
+        }
+        .section-content {
+            max-width: 800px;
+            text-align: center;
+        }
+        .icon-container {
+            width: 120px;
+            height: 120px;
+            background-color: var(--brand-light-blue);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 2rem auto;
+            transition: transform 0.3s ease;
+        }
+        .icon-container:hover {
+            transform: scale(1.1);
+        }
+        .icon {
+            width: 60px;
+            height: 60px;
+            stroke: var(--brand-dark-blue);
+            stroke-width: 1.5;
+        }
+        .nav-button {
+            position: fixed;
+            bottom: 2rem;
+            background-color: var(--brand-blue);
+            color: white;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+            transition: background-color 0.2s;
+            z-index: 100;
+        }
+        .nav-button:hover {
+            background-color: var(--brand-dark-blue);
+        }
+        #prevButton {
+            left: 2rem;
+        }
+        #nextButton {
+            right: 2rem;
+        }
+        .stepper {
+            position: fixed;
+            top: 50%;
+            right: 2rem;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            z-index: 50;
+        }
+        .step-dot {
+            width: 12px;
+            height: 12px;
+            background-color: #d1d5db;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .step-dot.active {
+            background-color: var(--brand-blue);
+            transform: scale(1.5);
+        }
+        @media (max-width: 768px) {
+            .stepper {
+                top: auto;
+                bottom: 2rem;
+                left: 50%;
+                transform: translateX(-50%);
+                flex-direction: row;
+            }
+            .nav-button {
+                display: none; /* Hide arrows on mobile, stepper is primary nav */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="stepper" id="stepper"></div>
+
+    <div id="section1" class="section">
+        <div class="section-content">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">The Automation Paradox</h1>
+            <p class="text-xl text-gray-600 mb-8">We automated the tasks, but accidentally multiplied the decisions.</p>
+            <div class="icon-container">
+                <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+            </div>
+            <h2 class="text-2xl font-semibold mb-2">Part 1: The Hook</h2>
+            <p class="text-lg text-gray-700">For years, the goal has been **automation**. We've built incredible tools that automate repetitive tasks like sending emails, scheduling posts, and running reports. The promise was simple: save time, increase efficiency, and let marketers focus on strategy. This approach was logical, necessary, and has delivered real value.</p>
+        </div>
+    </div>
+
+    <div id="section2" class="section">
+        <div class="section-content">
+            <div class="icon-container">
+                <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+            </div>
+            <h2 class="text-2xl font-semibold mb-2">Part 2: The Hidden Tension</h2>
+            <p class="text-lg text-gray-700 mb-6">While we were busy automating *tasks*, the number of strategic *decisions* exploded. Each automated task now requires a human to decide: Which audience segment? What's the right message? Which image will resonate? What's the optimal send time? The tool can send a million emails, but a person must still orchestrate the strategy for each one.</p>
+            <p class="text-lg text-gray-700">This creates a bottleneck. Our tools have infinite capacity to *do*, but our teams have finite capacity to *decide*. We've made marketers the human schedulers for brilliant, but dumb, machines.</p>
+        </div>
+    </div>
+
+    <div id="section3" class="section">
+        <div class="section-content">
+            <div class="icon-container">
+                <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+            </div>
+            <h2 class="text-2xl font-semibold mb-2">Part 3: The Pivot</h2>
+            <p class="text-lg text-gray-700 mb-6">The cost of inaction is burnout and missed opportunity. Our teams are trapped in a cycle of endless decision-making, preventing them from doing the high-level strategic work they were hired for. The critical mindset shift is to move from **automating tasks** to **delegating outcomes**.</p>
+            <p class="text-lg text-gray-700">This is the shift from Automation to **Autonomy**. Instead of telling a system *what to do*, we must empower it to understand *what we want to achieve*. We need to give our tools a goal (e.g., "recover abandoned carts") and the agency to figure out the best way to accomplish it.</p>
+        </div>
+    </div>
+
+    <div id="section4" class="section">
+        <div class="section-content">
+             <div class="icon-container">
+                <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            </div>
+            <h2 class="text-2xl font-semibold mb-2">Part 4: The Provocation</h2>
+            <p class="text-2xl md:text-3xl font-bold text-gray-800">What if our teams spent less time making decisions for our software, and more time teaching it how to make decisions for itself?</p>
+        </div>
+    </div>
+
+    <a id="prevButton" href="#" class="nav-button" style="display: none;">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
+    </a>
+    <a id="nextButton" href="#" class="nav-button">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+    </a>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const sections = document.querySelectorAll('.section');
+            const stepperContainer = document.getElementById('stepper');
+            const prevButton = document.getElementById('prevButton');
+            const nextButton = document.getElementById('nextButton');
+            let currentSection = 0;
+
+            // Create stepper dots
+            sections.forEach((section, index) => {
+                const dot = document.createElement('div');
+                dot.classList.add('step-dot');
+                dot.dataset.index = index;
+                if (index === 0) dot.classList.add('active');
+                dot.addEventListener('click', () => {
+                    scrollToSection(index);
+                });
+                stepperContainer.appendChild(dot);
+            });
+            const dots = document.querySelectorAll('.step-dot');
+
+            function updateUI() {
+                // Update dots
+                dots.forEach((dot, index) => {
+                    if (index === currentSection) {
+                        dot.classList.add('active');
+                    } else {
+                        dot.classList.remove('active');
+                    }
+                });
+
+                // Update nav buttons
+                prevButton.style.display = currentSection === 0 ? 'none' : 'flex';
+                nextButton.style.display = currentSection === sections.length - 1 ? 'none' : 'flex';
+            }
+
+            function scrollToSection(index) {
+                sections[index].scrollIntoView({ behavior: 'smooth' });
+            }
+
+            // Button event listeners
+            prevButton.addEventListener('click', (e) => {
+                e.preventDefault();
+                if (currentSection > 0) {
+                    currentSection--;
+                    scrollToSection(currentSection);
+                }
+            });
+
+            nextButton.addEventListener('click', (e) => {
+                e.preventDefault();
+                if (currentSection < sections.length - 1) {
+                    currentSection++;
+                    scrollToSection(currentSection);
+                }
+            });
+
+            // Intersection Observer to update active section
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const index = Array.from(sections).indexOf(entry.target);
+                        currentSection = index;
+                        updateUI();
+                    }
+                });
+            }, { threshold: 0.6 });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+            
+            updateUI();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EmailForce - Business Process Flow</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Base and Custom Styles */
+        body { font-family: 'Inter', sans-serif; }
+        .canvas-card { background-color: #ffffff; border-radius: 0.75rem; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); padding: 1.5rem; }
+        .section-title { font-size: 1.5rem; font-weight: 700; color: #111827; border-bottom: 2px solid #4f46e5; padding-bottom: 0.5rem; margin-bottom: 1.5rem; }
+        .subsection-title { font-size: 1.25rem; font-weight: 600; color: #374151; margin-bottom: 1rem; }
+        .persona-card { background-color: #f9fafb; border: 1px solid #e5e7eb; border-radius: 0.75rem; padding: 1.5rem; }
+        
+        /* Process Flow Diagram Styles */
+        .process-flow { display: flex; align-items: stretch; gap: 0.5rem; overflow-x: auto; padding-bottom: 1rem; }
+        .process-step { flex: 0 0 160px; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 1rem; border: 1px solid #d1d5db; border-radius: 0.5rem; text-align: center; position: relative; font-size: 0.875rem; }
+        .process-step .step-title { font-weight: 600; margin-bottom: 0.25rem; }
+        .process-step .step-desc { font-size: 0.75rem; color: #6b7280; }
+        .process-step.pain-point { border-color: #ef4444; background-color: #fee2e2; }
+        .process-step.pain-point .step-title { color: #b91c1c; }
+        .process-step.future-step { border-color: #22c55e; background-color: #dcfce7; }
+        .process-step.future-step .step-title { color: #15803d; }
+        .process-arrow { display: flex; justify-content: center; align-items: center; color: #9ca3af; font-size: 2rem; font-weight: bold; }
+        
+        /* Print Styles */
+        @media print {
+            body { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+            #header { display: none !important; }
+            .canvas-card { box-shadow: none; border: 1px solid #e5e7eb; }
+            .process-flow { display: flex; flex-wrap: wrap; }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 p-4 sm:p-6 lg:p-8">
+    <header id="header" class="flex justify-between items-center mb-8">
+        <h1 class="text-3xl font-bold text-gray-900">EmailForce: Business Process Canvas</h1>
+        <button id="downloadButton" class="bg-indigo-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Download as PDF</button>
+    </header>
+    <main>
+
+        <!-- Feature 1: Compliance Guard & Consent Management -->
+        <div class="canvas-card mb-8">
+            <h2 class="section-title">Feature: Compliance Guard & Consent Management Hub</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                <div class="persona-card">
+                    <h3 class="font-bold text-lg mb-2">User Persona</h3>
+                    <p>Maria, the "Compliance-Conscious" E-commerce Marketer.</p>
+                </div>
+                <div class="persona-card">
+                    <h3 class="font-bold text-lg mb-2">Pain Points</h3>
+                    <ul class="list-disc list-inside text-sm">
+                        <li>Overwhelmed by GDPR/CCPA complexity.</li>
+                        <li>Fears costly fines from compliance mistakes.</li>
+                        <li>Manual list management is slow and error-prone.</li>
+                    </ul>
+                </div>
+                <div class="persona-card">
+                    <h3 class="font-bold text-lg mb-2">Primary Benefit</h3>
+                    <p>Confidently run personalized campaigns without risking compliance violations, turning fear into focus.</p>
+                </div>
+            </div>
+
+            <div class="mb-6">
+                <h3 class="subsection-title">Current State: The Manual Compliance Nightmare</h3>
+                <div class="process-flow">
+                    <div class="process-step pain-point"><div class="step-title">1. Manual List Segmentation</div><div class="step-desc">User Action: Manually creates separate lists for EU, CA, etc.</div></div>
+                    <div class="process-arrow">→</div>
+                    <div class="process-step pain-point"><div class="step-title">2. Create Campaign Variant</div><div class="step-desc">User Action: Duplicates a campaign and manually adds region-specific legal text.</div></div>
+                    <div class="process-arrow">→</div>
+                    <div class="process-step pain-point"><div class="step-title">3. Cross-Reference Opt-Outs</div><div class="step-desc">User Action: Exports master unsubscribe list and manually checks it against the campaign list.</div></div>
+                    <div class="process-arrow">→</div>
+                    <div class="process-step"><div class="step-title">4. Send with Anxiety</div><div class="step-desc">User Action: Clicks 'Send' and hopes no mistakes were made.</div></div>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="subsection-title">Future State: Automated Compliance & Peace of Mind</h3>
+                <div class="process-flow">
+                    <div class="process-step future-step"><div class="step-title">1. Set Rules Once</div><div class="step-desc">User Action: In the Consent Hub, defines rules for each region.</div></div>
+                    <div class="process-arrow">→</div>
+                    <div class="process-step"><div class="step-title">2. Create One Campaign</div><div class="step-desc">User Action: Designs a single campaign for a global audience.</div></div>
+                    <div class="process-arrow">→</div>
+                    <div class="process-step future-step"><div class="step-title">3. System Auto-Applies Rules</div><div class="step-desc">System (EmailForce): Before sending, Compliance Guard checks each recipient's location and consent status.</div></div>
+                    <div class="process-arrow">→</div>
+                    <div class="process-step future-step"><div class="step-title">4. Compliant Send</div><div class="step-desc">System (EmailForce): Dynamically inserts correct legal text and filters out non-consenting users.</div></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Feature 2: Revenue Recovery Agent -->
+        <div class="canvas-card mb-8">
+            <h2 class="section-title">Feature: Revenue Recovery Agent</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                <div class="persona-card">
+                    <h3 class="font-bold text-lg mb-2">User Persona</h3>
+                    <p>Maria, the "Compliance-Conscious" E-commerce Marketer.</p>
+                </div>
+                <div class="persona-card">
+                    <h3 class="font-bold text-lg mb-2">Pain Points</h3>
+                    <ul class="list-disc list-inside text-sm">
+                        <li>Not enough time to create effective abandoned cart emails.</li>
+                        <li>Leaving money on the table with generic, single-step flows.</li>
+                        <li>Lacks resources to A/B test and optimize.</li>
+                    </ul>
+                </div>
+                <div class="persona-card">
+                    <h3 class="font-bold text-lg mb-2">Primary Benefit</h3>
+                    <p>Automatically recovers lost revenue with an AI agent that works 24/7, requiring no manual effort after setup.</p>
+                </div>
+            </div>
+
+            <div class="mb-6">
+                <h3 class="subsection-title">Current State: The "Set It and Forget It" Approach</h3>
+                <div class="process-flow">
+                    <div class="process-step"><div class="step-title">1. Customer Abandons Cart</div><div class="step-desc">System (E-commerce): Cart data is stored.</div></div>
+                    <div class="process-arrow">→</div>
+                    <div class="process-step pain-point"><div class="step-title">2. Generic Email Sent</div><div class="step-desc">System (Generic ESP): A single, pre-written email is sent after a fixed delay.</div></div>
+                    <div class="process-arrow">→</div>
+                    <div class="process-step pain-point"><div class="step-title">3. Low Recovery Rate</div><div class="step-desc">Outcome: Some revenue is recovered, but potential is missed.</div></div>
+                    <div class="process-arrow">→</div>
+                    <div class="process-step pain-point"><div class="step-title">4. No Optimization</div><div class="step-desc">User Action: Marketer is too busy to analyze or improve the flow.</div></div>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="subsection-title">Future State: Autonomous Revenue Optimization</h3>
+                <div class="process-flow">
+                    <div class="process-step future-step"><div class="step-title">1. Enable Agent</div><div class="step-desc">User Action: Clicks one button to activate the Revenue Recovery Agent.</div></div>
+                    <div class="process-arrow">→</div>
+                    <div class="process-step"><div class="step-title">2. Customer Abandons Cart</div><div class="step-desc">System (E-commerce): Cart data is sent to EmailForce.</div></div>
+                    <div class="process-arrow">→</div>
+                    <div class="process-step future-step"><div class="step-title">3. AI Generates & Tests</div><div class="step-desc">System (EmailForce): Agent autonomously creates and A/B tests multiple subject lines, copy, and offers.</div></div>
+                    <div class="process-arrow">→</div>
+                    <div class="process-step future-step"><div class="step-title">4. Optimized Recovery</div><div class="step-desc">Outcome: Maximized revenue recovery. Marketer reviews performance on a dashboard.</div></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Feature 3: CDP-Native Activation & Dynamic Content -->
+        <div class="canvas-card mb-8">
+            <h2 class="section-title">Feature: CDP-Native Activation & Dynamic Content Blocks</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                <div class="persona-card">
+                    <h3 class="font-bold text-lg mb-2">User Persona</h3>
+                    <p>David, the "Data-Driven" Enterprise Marketing Manager.</p>
+                </div>
+                <div class="persona-card">
+                    <h3 class="font-bold text-lg mb-2">Pain Points</h3>
+                    <ul class="list-disc list-inside text-sm">
+                        <li>Data activation is slow due to engineering dependencies.</li>
+                        <li>Cannot scale creative to match granular CDP segments.</li>
+                        <li>Weeks-long lead time to launch a new personalized campaign.</li>
+                    </ul>
+                </div>
+                <div class="persona-card">
+                    <h3 class="font-bold text-lg mb-2">Primary Benefit</h3>
+                    <p>Launch hyper-personalized campaigns in hours, not weeks, by eliminating engineering bottlenecks and automating creative.</p>
+                </div>
+            </div>
+
+            <div class="mb-6">
+                <h3 class="subsection-title">Current State: The Multi-Team Bottleneck</h3>
+                <div class="process-flow">
+                    <div class="process-step"><div class="step-title">1. Identify Segment</div><div class="step-desc">User Action: David finds a valuable segment in the CDP.</div></div>
+                    <div class="process-arrow">→</div>
+                    <div class="process-step pain-point"><div class="step-title">2. File Eng Ticket</div><div class="step-desc">User Action: Submits a ticket for engineering to create an audience list.</div></div>
+                    <div class="process-arrow">→</div>
+                    <div class="process-step pain-point"><div class="step-title">3. Wait Days/Weeks</div><div class="step-desc">System: Ticket sits in a backlog.</div></div>
+                    <div class="process-arrow">→</div>
+                    <div class="process-step pain-point"><div class="step-title">4. Manual Campaign Build</div><div class="step-desc">User Action: Manually builds a generic campaign for the newly created list.</div></div>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="subsection-title">Future State: Direct Data-to-Creative Flow</h3>
+                <div class="process-flow">
+                    <div class="process-step future-step"><div class="step-title">1. Connect CDP</div><div class="step-desc">User Action: David authorizes EmailForce to access the CDP.</div></div>
+                    <div class="process-arrow">→</div>
+                    <div class="process-step"><div class="step-title">2. Select Segment</div><div class="step-desc">User Action: In EmailForce, directly selects the desired segment from the CDP.</div></div>
+                    <div class="process-arrow">→</div>
+                    <div class="process-step future-step"><div class="step-title">3. AI Generates Variants</div><div class="step-desc">System (EmailForce): Agent analyzes segment data and generates dynamic content blocks with personalized offers/images.</div></div>
+                    <div class="process-arrow">→</div>
+                    <div class="process-step"><div class="step-title">4. Review & Launch</div><div class="step-desc">User Action: David reviews the variants and launches the campaign in minutes.</div></div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // This script handles the "Download as PDF" button functionality.
+            const downloadButton = document.getElementById('downloadButton');
+            if(downloadButton) {
+                // It attaches the print function to the button's click event.
+                downloadButton.addEventListener('click', () => window.print());
+            }
+        });
+    </script>
+</body>
+</html>
